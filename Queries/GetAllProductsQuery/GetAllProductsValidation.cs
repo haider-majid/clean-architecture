@@ -6,6 +6,7 @@ namespace clean_architecture.Queries.GetAllProductsQuery;
 public class GetAllProductsValidation : AbstractValidator<ProductEntity>
 {
     
+    
    public GetAllProductsValidation()
     {
         RuleFor(p => p.Name)
