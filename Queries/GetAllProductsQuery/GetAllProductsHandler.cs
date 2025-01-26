@@ -17,9 +17,6 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, L
     public async Task<List<ProductEntity>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
         var query = _dbContext.products.AsQueryable();
-
-       
-
         return await query.ToListAsync(cancellationToken);
     }
 }

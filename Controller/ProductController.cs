@@ -1,4 +1,5 @@
 using clean_architecture.Queries.GetAllProductsQuery;
+using clean_architecture.Queries.GetProductByIdQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,6 @@ public class ProductsController : ControllerBase
     
 
     [HttpGet]
-    
     public async Task<IActionResult> GetProducts()
     {
         var query = new GetAllProductsQuery { };
@@ -28,5 +28,20 @@ public class ProductsController : ControllerBase
             
         }
         return Ok(products);
+    }
+    
+    [HttpGet("{id}")]
+
+    
+    public async Task<IActionResult> GetProduct([FromRoute] Guid id)
+    {
+        var query = new GetProductByIdQuery { id = id };
+        var product = await _mediator.Send(query);
+
+        if (product == null)
+        {
+            return NotFound();
+        }
+        return Ok(product);
     }
 }
