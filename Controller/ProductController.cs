@@ -17,6 +17,7 @@ public class ProductsController : ControllerBase
     
 
     [HttpGet]
+    
     public async Task<IActionResult> GetProducts()
     {
         var query = new GetAllProductsQuery { };
