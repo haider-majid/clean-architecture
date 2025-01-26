@@ -13,5 +13,4 @@ public class AppDbContext : DbContext
     public DbSet<ProductEntity> products { get; set; }
     
     
-    
 }

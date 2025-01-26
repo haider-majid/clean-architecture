@@ -3,10 +3,7 @@ using MediatR;
 
 namespace clean_architecture.Queries.GetAllProductsQuery;
 
-public class GetAllProductsQuery : IRequest<ProductEntity>
+public class GetAllProductsQuery : IRequest<List<ProductEntity>>
 {
-    
-    public string Name { get; set; }
-    
     
 }

@@ -1,19 +1,25 @@
-using clean_architecture.Data;
 using clean_architecture.Entity;
+using clean_architecture.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace clean_architecture.Queries.GetAllProductsQuery;
 
-public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery , ProductEntity>
+public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, List<ProductEntity>>
 {
-    private readonly AppDbContext _db;
-    
-    public GetAllProductsHandler(AppDbContext db)
+    private readonly AppDbContext _dbContext;
+
+    public GetAllProductsQueryHandler(AppDbContext dbContext)
     {
-        _db = db;
+        _dbContext = dbContext;
     }
-    public Task<ProductEntity> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+
+    public async Task<List<ProductEntity>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
-        return null;
+        var query = _dbContext.products.AsQueryable();
+
+       
+
+        return await query.ToListAsync(cancellationToken);
     }
 }
