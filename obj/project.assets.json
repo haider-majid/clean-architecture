@@ -3520,11 +3520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hhhff/Desktop/clean_architecture/clean architecture/clean architecture.csproj",
+      "projectUniqueName": "/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/clean architecture.csproj",
       "projectName": "clean architecture",
-      "projectPath": "/Users/hhhff/Desktop/clean_architecture/clean architecture/clean architecture.csproj",
+      "projectPath": "/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/clean architecture.csproj",
       "packagesPath": "/Users/hhhff/.nuget/packages/",
-      "outputPath": "/Users/hhhff/Desktop/clean_architecture/clean architecture/obj/",
+      "outputPath": "/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hhhff/.nuget/NuGet/NuGet.Config"

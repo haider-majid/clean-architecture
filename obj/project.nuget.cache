@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nDxHq+tMsKk=",
+  "dgSpecHash": "o+LGkusEvGk=",
   "success": true,
-  "projectFilePath": "/Users/hhhff/Desktop/clean_architecture/clean architecture/clean architecture.csproj",
+  "projectFilePath": "/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/clean architecture.csproj",
   "expectedPackageFiles": [
     "/Users/hhhff/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/Users/hhhff/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

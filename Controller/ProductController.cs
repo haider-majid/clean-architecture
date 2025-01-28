@@ -1,3 +1,4 @@
+using clean_architecture.Commands.CreateProductCommand;
 using clean_architecture.Queries.GetAllProductsQuery;
 using clean_architecture.Queries.GetProductByIdQuery;
 using MediatR;
@@ -43,5 +44,12 @@ public class ProductsController : ControllerBase
             return NotFound();
         }
         return Ok(product);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateProductCommand command)
+    {
+        var productId = await _mediator.Send(command);
+        return CreatedAtAction(nameof(Create), new { id = productId }, productId);
     }
 }
