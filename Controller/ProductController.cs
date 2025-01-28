@@ -1,4 +1,5 @@
 using clean_architecture.Commands.CreateProductCommand;
+using clean_architecture.Commands.DeleteProductCommand;
 using clean_architecture.Commands.UpdateProductCommand;
 using clean_architecture.Queries.GetAllProductsQuery;
 using clean_architecture.Queries.GetProductByIdQuery;
@@ -59,5 +60,13 @@ public class ProductsController : ControllerBase
     {
         var product = await _mediator.Send(command);
         return Ok(command);
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> Delete([FromBody] DeleteProductCommand command)
+    {
+        var product = await _mediator.Send(command);
+        return Ok(command);
+
     }
 }
