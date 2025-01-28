@@ -1,4 +1,5 @@
 using clean_architecture.Commands.CreateProductCommand;
+using clean_architecture.Commands.UpdateProductCommand;
 using clean_architecture.Queries.GetAllProductsQuery;
 using clean_architecture.Queries.GetProductByIdQuery;
 using MediatR;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace clean_architecture.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/products")]
 public class ProductsController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -51,5 +52,12 @@ public class ProductsController : ControllerBase
     {
         var productId = await _mediator.Send(command);
         return CreatedAtAction(nameof(Create), new { id = productId }, productId);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
+    {
+        var product = await _mediator.Send(command);
+        return Ok(command);
     }
 }

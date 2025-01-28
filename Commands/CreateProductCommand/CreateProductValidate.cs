@@ -2,10 +2,10 @@ using FluentValidation;
 
 namespace clean_architecture.Commands.CreateProductCommand;
 
-public class CreateProductValidte :  AbstractValidator<CreateProductCommand>
+public class CreateProductValidate :  AbstractValidator<CreateProductCommand>
 {
 
-    public CreateProductValidte()
+    public CreateProductValidate()
     {
         RuleFor(p => p.Name).NotEmpty().WithMessage("Name is required.")
             .MaximumLength(20)

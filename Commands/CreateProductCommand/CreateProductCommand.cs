@@ -7,4 +7,4 @@ namespace clean_architecture.Commands.CreateProductCommand
         public string? Name { get; set; }
         public string? Description { get; set; }
     }
-}
+} 
