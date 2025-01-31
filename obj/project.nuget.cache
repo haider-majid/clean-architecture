@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o+LGkusEvGk=",
+  "dgSpecHash": "b10bURnqs68=",
   "success": true,
   "projectFilePath": "/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/clean architecture.csproj",
   "expectedPackageFiles": [
+    "/Users/hhhff/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/hhhff/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/Users/hhhff/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/Users/hhhff/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",

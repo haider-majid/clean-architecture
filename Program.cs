@@ -4,7 +4,6 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -20,8 +19,6 @@ builder.Services.AddMediatR(typeof(Program).Assembly);
 
 
 
-
-
 // Configure services 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
@@ -33,8 +30,6 @@ builder.Services.AddControllers()
 
 
 builder.Services.AddControllers();
-
-
 
 // configure FluentValidation
 builder.Services.AddControllers()

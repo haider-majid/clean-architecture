@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace clean_architecture.Controllers;
 
 [ApiController]
-[Route("api/products")]
+[Route("api/v1/products")]
+
 public class ProductsController : ControllerBase
 {
     private readonly IMediator _mediator;

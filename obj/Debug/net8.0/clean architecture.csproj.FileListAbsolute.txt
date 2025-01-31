@@ -421,3 +421,4 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/clean architecture.pdb
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/clean architecture.genruntimeconfig.cache
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/ref/clean architecture.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/AutoMapper.dll
