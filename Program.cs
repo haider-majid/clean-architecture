@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using clean_architecture.Data;
+using clean_architecture.Mappings;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,9 @@ var configuration = new ConfigurationBuilder()
 
 builder.Services.AddMediatR(typeof(Program).Assembly);
 
+
+// auto mapper
+builder.Services.AddAutoMapper(typeof(ProductProfile));
 
 
 // Configure services 
