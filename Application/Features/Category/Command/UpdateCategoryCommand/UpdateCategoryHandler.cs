@@ -31,5 +31,6 @@ public class UpdateCategoryHandler : IRequestHandler<UpdateCategoryCommand, Cate
 
         return category;
     }
-
 }
+
+

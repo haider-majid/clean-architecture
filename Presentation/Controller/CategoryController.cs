@@ -65,14 +65,17 @@ public class CategoryController : ControllerBase
         var result = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetCategory), new { id = result.id }, result);
     }
-    [HttpPut("{id}")]
+  
     
+    
+    
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, [FromBody] UpdateCategoryCommand command)
     {
         if (id == Guid.Empty)
             return BadRequest("Invalid category ID.");
 
-        // Ensure the route ID is assigned to the command object
+        // Assign the route ID to the command
         command.Id = id;
 
         var result = await _mediator.Send(command);
