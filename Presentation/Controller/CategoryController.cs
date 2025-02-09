@@ -21,7 +21,7 @@ public class CategoryController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
-        var query = new GetCategoryQuery() { };
+        var query = new GetAllCategoryQuery() { };
         var categories = await _mediator.Send(query);
         if (query == null)
         {
@@ -31,11 +31,17 @@ public class CategoryController : ControllerBase
         return Ok(categories);
     }
     
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetCategory([FromRoute] Guid id)
+    {
+        var query = new GetCategoryQuery { Id = id };
+        var category = await _mediator.Send(query);
 
-
-    
-  
-    
-  
+        if (category == null)
+        {
+            return NotFound();
+        }
+        return Ok(category);
+    }
     
 }
