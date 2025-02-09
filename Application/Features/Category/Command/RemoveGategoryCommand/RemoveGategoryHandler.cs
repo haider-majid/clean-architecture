@@ -17,15 +17,14 @@ public class RemoveGategoryHandler : IRequestHandler<RemoveGategoryCommand.Remov
     public async Task<bool> Handle(RemoveGategoryCommand.RemoveGategoryCommand request, CancellationToken cancellationToken)
     {
         
-        var category = await _dbContext.categories.FindAsync( request.id);
+        var category =  _dbContext.categories.FirstOrDefault(x => x.id ==  request.id);
         if (category == null)
         {
-            throw new Exception("Category not found");
+            return false; 
         }
-        
         _dbContext.categories.Remove(category);
-        await _dbContext.SaveChangesAsync();
-        
+      
+        await _dbContext.SaveChangesAsync(cancellationToken:cancellationToken);
         return true;
         
     }

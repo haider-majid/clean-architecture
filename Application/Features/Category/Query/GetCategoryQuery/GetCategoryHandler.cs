@@ -24,10 +24,6 @@ public class GetCategoryHandler : IRequestHandler<GetCategoryQuery, CategoryDto>
             throw new InvalidOperationException("Database context is not initialized.");
 
         var category = await _dbContext.categories.FindAsync(request.Id);
-        
-        if (category == null)
-            throw new KeyNotFoundException($"Category with ID {request.Id} not found.");
-
         var categoryDto = _mapper.Map<CategoryDto>(category);
         return categoryDto;
     }

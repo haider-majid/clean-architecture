@@ -52,11 +52,11 @@ public class CategoryController : ControllerBase
     {
         var command = new RemoveGategoryCommand { id = id };
         var result = await _mediator.Send(command);
-        if (!result)
+        if (result ==false)
         {
-            return BadRequest();
+            return NotFound("The category does not exist."); // Send a 404 response
         }
-        return NoContent();
+        return Ok(result);
     }
     
     [HttpPost]
@@ -72,13 +72,17 @@ public class CategoryController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, [FromBody] UpdateCategoryCommand command)
     {
-        if (id == Guid.Empty)
-            return BadRequest("Invalid category ID.");
+       
 
         // Assign the route ID to the command
         command.Id = id;
+        
 
         var result = await _mediator.Send(command);
+        if (result == null)
+        {
+            return NotFound("The category does not exist."); // Send a 404 response
+        }
     
         return Ok(result);
     }

@@ -1,6 +1,7 @@
 using clean_architecture.Data;
 using clean_architecture.Entity;
 using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace clean_architecture.Application.Features.Category.Command.UpdateCategoryCommand;
 
@@ -23,7 +24,9 @@ public class UpdateCategoryHandler : IRequestHandler<UpdateCategoryCommand, Cate
 
         var category = await _dbContext.categories.FindAsync(request.Id);
         if (category == null)
-            throw new KeyNotFoundException($"Category with ID {request.Id} not found.");
+        {
+            return null;
+        }
 
         category.Name = request.Name ?? category.Name;
         _dbContext.categories.Update(category);
