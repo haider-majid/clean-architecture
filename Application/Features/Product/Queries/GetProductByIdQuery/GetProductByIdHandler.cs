@@ -20,7 +20,7 @@ public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, Produc
         var product = await _dbContext.products.FindAsync(request.id);
         if (product == null)
         {
-            throw new KeyNotFoundException($"Product with ID {request.id} not found.");
+            return null;
         }
         return product;
     }

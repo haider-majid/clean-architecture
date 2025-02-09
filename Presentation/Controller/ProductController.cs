@@ -44,7 +44,7 @@ public class ProductsController : ControllerBase
 
         if (product == null)
         {
-            return NotFound();
+            return NotFound("Product not found");
         }
         return Ok(product);
     }
@@ -60,19 +60,16 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> Update( [FromRoute] Guid id,[FromBody] UpdateProductCommand command)
     {
         
-        if (id == Guid.Empty)
-            return BadRequest("Invalid category ID.");
-
         // Ensure the route ID is assigned to the command object
         command.id = id;
         
         var product = await _mediator.Send(command);
+        if (product == null)
+        {
+            return NotFound("Product not found");
+        }
         return Ok(product);
     }
-    
-    
-    
-    
     
     
     
@@ -82,6 +79,10 @@ public class ProductsController : ControllerBase
     {
         var command = new DeleteProductCommand { id = id };
         var product = await _mediator.Send(command);
+        if (!product)
+        {
+            return NotFound("Product not found");
+        }
         return Ok(command);
 
     }

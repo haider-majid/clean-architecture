@@ -23,7 +23,9 @@ public class UpdateProductHandler : IRequestHandler<UpdateProductCommand , Produ
 
         var product = await _context.products.FindAsync(request.id);
         if (product == null)
-            throw new KeyNotFoundException($"Category with ID {request.id} not found.");
+        {
+            return null;
+        }
 
         product.Name = request.Name ?? product.Name;
         product.Description = request.Description ?? product.Description;
