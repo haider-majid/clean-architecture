@@ -1,3 +1,4 @@
+using clean_architecture.Application.Features.Category.Command.AddCategoryCommand;
 using clean_architecture.Application.Features.Category.Command.RemoveGategoryCommand;
 using clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 using MediatR;
@@ -55,6 +56,13 @@ public class CategoryController : ControllerBase
             return BadRequest();
         }
         return NoContent();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> AddCategory([FromBody] AddCategoryCommand command)
+    {
+        var result = await _mediator.Send(command);
+        return CreatedAtAction(nameof(GetCategory), new { id = result.id }, result);
     }
     
 }
