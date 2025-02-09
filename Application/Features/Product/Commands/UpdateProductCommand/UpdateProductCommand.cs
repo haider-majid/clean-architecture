@@ -3,7 +3,7 @@ using MediatR;
 
 namespace clean_architecture.Commands.UpdateProductCommand;
 
-public class UpdateProductCommand : IRequest<bool>
+public class UpdateProductCommand : IRequest<ProductEntity>
 {
     
     public Guid id {get; set;}

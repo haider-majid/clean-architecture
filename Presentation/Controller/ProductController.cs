@@ -56,16 +56,31 @@ public class ProductsController : ControllerBase
         return CreatedAtAction(nameof(Create), new { id = productId }, productId);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
+    [HttpPut ("{id}")]
+    public async Task<IActionResult> Update( [FromRoute] Guid id,[FromBody] UpdateProductCommand command)
     {
-        var product = await _mediator.Send(command);
-        return Ok(command);
-    }
+        
+        if (id == Guid.Empty)
+            return BadRequest("Invalid category ID.");
 
-    [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteProductCommand command)
+        // Ensure the route ID is assigned to the command object
+        command.id = id;
+        
+        var product = await _mediator.Send(command);
+        return Ok(product);
+    }
+    
+    
+    
+    
+    
+    
+    
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
+        var command = new DeleteProductCommand { id = id };
         var product = await _mediator.Send(command);
         return Ok(command);
 

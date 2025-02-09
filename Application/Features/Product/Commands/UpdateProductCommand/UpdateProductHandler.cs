@@ -4,7 +4,7 @@ using MediatR;
 
 namespace clean_architecture.Commands.UpdateProductCommand;
 
-public class UpdateProductHandler : IRequestHandler<UpdateProductCommand , bool>
+public class UpdateProductHandler : IRequestHandler<UpdateProductCommand , ProductEntity>
 {
     private readonly AppDbContext _context;
 
@@ -13,14 +13,23 @@ public class UpdateProductHandler : IRequestHandler<UpdateProductCommand , bool>
         _context = context;
     }
 
-    public async Task<bool> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    public async Task<ProductEntity> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var productget = await _context.products.FindAsync(request.id);
-        productget.Name = request.Name ?? productget.Name;
-        productget.Description = request.Description ?? productget.Description;
-        _context.products.Update(productget);
-        _context.SaveChangesAsync(cancellationToken);
-        return true;
+        if (request == null)
+            throw new ArgumentNullException(nameof(request));
 
+        if (request.id == Guid.Empty)
+            throw new ArgumentException("Invalid category ID.", nameof(request.id));
+
+        var product = await _context.products.FindAsync(request.id);
+        if (product == null)
+            throw new KeyNotFoundException($"Category with ID {request.id} not found.");
+
+        product.Name = request.Name ?? product.Name;
+        product.Description = request.Description ?? product.Description;
+        _context.products.Update(product);
+        await _context.SaveChangesAsync();
+
+        return product;
     }
 }
