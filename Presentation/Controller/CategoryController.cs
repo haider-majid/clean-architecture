@@ -1,5 +1,6 @@
 using clean_architecture.Application.Features.Category.Command.AddCategoryCommand;
 using clean_architecture.Application.Features.Category.Command.RemoveGategoryCommand;
+using clean_architecture.Application.Features.Category.Command.UpdateCategoryCommand;
 using clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -64,5 +65,20 @@ public class CategoryController : ControllerBase
         var result = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetCategory), new { id = result.id }, result);
     }
+    [HttpPut("{id}")]
+    
+    public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, [FromBody] UpdateCategoryCommand command)
+    {
+        if (id == Guid.Empty)
+            return BadRequest("Invalid category ID.");
+
+        // Ensure the route ID is assigned to the command object
+        command.Id = id;
+
+        var result = await _mediator.Send(command);
+    
+        return Ok(result);
+    }
+
     
 }
