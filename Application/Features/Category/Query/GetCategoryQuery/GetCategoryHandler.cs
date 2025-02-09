@@ -7,16 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 
-public class GetCategoryHandler : IRequestHandler<GetCategoryQuery, CategoryDto>
+public class GetCategoryHandler : BaseHandler ,  IRequestHandler<GetCategoryQuery, CategoryDto>
 {
-    private readonly AppDbContext _dbContext;
-    private readonly IMapper _mapper;
 
-    public GetCategoryHandler(AppDbContext dbContext, IMapper mapper)
-    {
-        _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
-        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-    }
+    public GetCategoryHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+    
 
     public async Task<CategoryDto> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
     {

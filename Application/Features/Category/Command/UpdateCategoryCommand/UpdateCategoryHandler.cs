@@ -1,3 +1,4 @@
+using AutoMapper;
 using clean_architecture.Data;
 using clean_architecture.Entity;
 using MediatR;
@@ -5,14 +6,11 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace clean_architecture.Application.Features.Category.Command.UpdateCategoryCommand;
 
-public class UpdateCategoryHandler : IRequestHandler<UpdateCategoryCommand, CategoryEntity>
+public class UpdateCategoryHandler : BaseHandler ,  IRequestHandler<UpdateCategoryCommand, CategoryEntity>
 {
-    private readonly AppDbContext _dbContext;
 
-    public UpdateCategoryHandler(AppDbContext dbContext)
-    {
-        _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
-    }
+
+    public UpdateCategoryHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
     public async Task<CategoryEntity> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {

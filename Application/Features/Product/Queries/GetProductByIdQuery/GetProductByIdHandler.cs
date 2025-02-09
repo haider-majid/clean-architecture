@@ -1,3 +1,4 @@
+using AutoMapper;
 using clean_architecture.Data;
 using clean_architecture.Entity;
 using MediatR;
@@ -5,16 +6,12 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace clean_architecture.Queries.GetProductByIdQuery;
 
-public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, ProductEntity>
+public class GetProductByIdHandler :BaseHandler ,  IRequestHandler<GetProductByIdQuery, ProductEntity>
 
 {
-    private readonly AppDbContext _dbContext;
-    
-    public GetProductByIdHandler(AppDbContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
 
+    
+    public GetProductByIdHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
     public async Task<ProductEntity> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
         var product = await _dbContext.products.FindAsync(request.id);

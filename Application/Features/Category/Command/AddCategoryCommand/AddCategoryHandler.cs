@@ -1,3 +1,4 @@
+using AutoMapper;
 using clean_architecture.Application.Features.Category.Model;
 using clean_architecture.Data;
 using clean_architecture.Entity;
@@ -5,14 +6,10 @@ using MediatR;
 
 namespace clean_architecture.Application.Features.Category.Command.AddCategoryCommand;
 
-public class AddCategoryHandler :  IRequestHandler< AddCategoryCommand, CategoryEntity>
+public class AddCategoryHandler : BaseHandler,   IRequestHandler< AddCategoryCommand, CategoryEntity>
 {
-    private readonly AppDbContext _dbContext;
 
-    public AddCategoryHandler(AppDbContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
+    public AddCategoryHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
     public async Task<CategoryEntity> Handle(AddCategoryCommand request, CancellationToken cancellationToken)
     {

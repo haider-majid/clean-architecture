@@ -7,16 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace clean_architecture.Queries.GetAllProductsQuery;
 
-public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, List<ProductDto>>
+public class GetAllProductsQueryHandler : BaseHandler ,  IRequestHandler<GetAllProductsQuery, List<ProductDto>>
 {
-    private readonly AppDbContext _dbContext;
-    private readonly IMapper _mapper;
 
-    public GetAllProductsQueryHandler(AppDbContext dbContext, IMapper mapper)
-    {
-        _dbContext = dbContext;
-        _mapper = mapper;
-    }
+
+    public GetAllProductsQueryHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
     public async Task<List<ProductDto>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {

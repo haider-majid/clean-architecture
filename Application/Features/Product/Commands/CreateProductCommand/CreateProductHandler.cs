@@ -1,19 +1,17 @@
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using clean_architecture.Data;
 using clean_architecture.Entity;
 
 namespace clean_architecture.Commands.CreateProductCommand
 {
-    public class CreateProductHandler : IRequestHandler<CreateProductCommand, bool>
+    public class CreateProductHandler : BaseHandler, IRequestHandler<CreateProductCommand, bool>
     {
-        private readonly AppDbContext _context;
+       
 
-        public CreateProductHandler(AppDbContext context)
-        {
-            _context = context;
-        }
+        public CreateProductHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
         public async Task<bool> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
@@ -29,8 +27,8 @@ namespace clean_architecture.Commands.CreateProductCommand
             };
 
             // Save to database
-            _context.products.Add(product);
-            await _context.SaveChangesAsync(cancellationToken);
+            _dbContext.products.Add(product);
+            await _dbContext.SaveChangesAsync(cancellationToken);
 
             return true; 
         }

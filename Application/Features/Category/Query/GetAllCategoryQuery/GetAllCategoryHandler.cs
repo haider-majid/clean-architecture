@@ -6,19 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 
-public class GetAllCategoryHandler : IRequestHandler<GetAllCategoryQuery, List<CategoryDto>>
+public class GetAllCategoryHandler : BaseHandler ,  IRequestHandler<GetAllCategoryQuery, List<CategoryDto>>
 {
-    private readonly AppDbContext _dbContext;
-    private readonly IMapper _mapper;
-    
-    public GetAllCategoryHandler(AppDbContext dbContext, IMapper mapper)
-    {
-        _dbContext = dbContext;
-        _mapper = mapper;
-    }
+   
+    public GetAllCategoryHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
+
     public async Task<List<CategoryDto>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
     {
-        
         
         var category = await _dbContext.categories.ToListAsync();
         var categoryDto = _mapper.Map<List<CategoryDto>>(category);
