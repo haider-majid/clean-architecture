@@ -1,3 +1,4 @@
+using clean_architecture.Application.Features.Category.Command.RemoveGategoryCommand;
 using clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +43,18 @@ public class CategoryController : ControllerBase
             return NotFound();
         }
         return Ok(category);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> RemoveCategory([FromRoute] Guid id)
+    {
+        var command = new RemoveGategoryCommand { id = id };
+        var result = await _mediator.Send(command);
+        if (!result)
+        {
+            return BadRequest();
+        }
+        return NoContent();
     }
     
 }

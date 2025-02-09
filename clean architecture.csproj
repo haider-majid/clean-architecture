@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Features\Category\Command\" />
+      <Folder Include="Application\Features\Category\Command\RemoveGategoryValidate\" />
       <Folder Include="Core\Services\" />
       <Folder Include="Infrastructure\Services\" />
       <Folder Include="Presentation\Extensions\" />
