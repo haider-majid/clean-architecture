@@ -1,13 +1,15 @@
 using AutoMapper;
+using clean_architecture.Application.Features.Category.Model;
 using clean_architecture.Entity;
 using clean_architecture.Features.Product.Models;
 
 namespace clean_architecture.Mappings;
 
-public class ProductProfile : Profile
+public class MapperProfile : Profile
 {
-    public ProductProfile()
+    public MapperProfile()
     {
         CreateMap<ProductEntity, ProductDto>();
+        CreateMap<CategoryEntity, CategoryDto>();
     }
 }

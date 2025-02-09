@@ -20,7 +20,7 @@ builder.Services.AddMediatR(typeof(Program).Assembly);
 
 
 // auto mapper
-builder.Services.AddAutoMapper(typeof(ProductProfile));
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 
 // Configure services 
