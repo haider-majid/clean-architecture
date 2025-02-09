@@ -22,6 +22,21 @@ namespace clean_architecture.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("clean_architecture.Entity.CategoryEntity", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("categories");
+                });
+
             modelBuilder.Entity("clean_architecture.Entity.ProductEntity", b =>
                 {
                     b.Property<Guid>("Id")
