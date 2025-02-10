@@ -2,90 +2,109 @@ using clean_architecture.Application.Features.Category.Command.AddCategoryComman
 using clean_architecture.Application.Features.Category.Command.RemoveGategoryCommand;
 using clean_architecture.Application.Features.Category.Command.UpdateCategoryCommand;
 using clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
+using clean_architecture.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace clean_architecture.Controllers;
 
-
 [ApiController]
 [Route("api/v1/categories")]
-
 public class CategoryController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly ILogger<CategoryController> _logger;
 
-    public CategoryController(IMediator mediator)
+    public CategoryController(IMediator mediator, ILogger<CategoryController> logger)
     {
         _mediator = mediator;
+        _logger = logger;
     }
-    
 
     [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
-        var query = new GetAllCategoryQuery() { };
-        var categories = await _mediator.Send(query);
-        if (query == null)
+        try
         {
-            return NotFound();
-            
+            var categories = await _mediator.Send(new GetAllCategoryQuery());
+
+            if (categories == null || !categories.Any())
+                return ActionResultHelper.HandleNotFound(_logger, "No categories found.");
+
+            return ActionResultHelper.HandleSuccess(_logger, $"Successfully retrieved {categories.Count} categories.", categories);
         }
-        return Ok(categories);
+        catch (Exception ex)
+        {
+            return ActionResultHelper.HandleError(_logger, ex, "An error occurred while fetching categories.");
+        }
     }
-    
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCategory([FromRoute] Guid id)
     {
-        var query = new GetCategoryQuery { Id = id };
-        var category = await _mediator.Send(query);
-
-        if (category == null)
+        try
         {
-            return NotFound();
+            var category = await _mediator.Send(new GetCategoryQuery { Id = id });
+
+            if (category == null)
+                return ActionResultHelper.HandleNotFound(_logger, $"Category with ID {id} not found.");
+
+            return ActionResultHelper.HandleSuccess(_logger, $"Successfully retrieved category {id}.", category);
         }
-        return Ok(category);
+        catch (Exception ex)
+        {
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while fetching category with ID {id}.");
+        }
     }
-    
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveCategory([FromRoute] Guid id)
     {
-        var command = new RemoveGategoryCommand { id = id };
-        var result = await _mediator.Send(command);
-        if (result ==false)
+        try
         {
-            return NotFound("The category does not exist."); // Send a 404 response
+            var result = await _mediator.Send(new RemoveGategoryCommand { id = id });
+
+            if (!result)
+                return ActionResultHelper.HandleNotFound(_logger, $"Category with ID {id} not found for deletion.");
+
+            return ActionResultHelper.HandleSuccess(_logger, $"Category with ID {id} deleted successfully.", result);
         }
-        return Ok(result);
+        catch (Exception ex)
+        {
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while deleting category with ID {id}.");
+        }
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> AddCategory([FromBody] AddCategoryCommand command)
     {
-        var result = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetCategory), new { id = result.id }, result);
+        try
+        {
+            var result = await _mediator.Send(command);
+            return ActionResultHelper.HandleSuccess(_logger, $"Category created successfully with ID: {result.id}", result);
+        }
+        catch (Exception ex)
+        {
+            return ActionResultHelper.HandleError(_logger, ex, "An error occurred while creating a category.");
+        }
     }
-  
-    
-    
-    
+
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory([FromRoute] Guid id, [FromBody] UpdateCategoryCommand command)
     {
-       
-
-        // Assign the route ID to the command
-        command.Id = id;
-        
-
-        var result = await _mediator.Send(command);
-        if (result == null)
+        try
         {
-            return NotFound("The category does not exist."); // Send a 404 response
-        }
-    
-        return Ok(result);
-    }
+            command.Id = id;
+            var result = await _mediator.Send(command);
 
-    
+            if (result == null)
+                return ActionResultHelper.HandleNotFound(_logger, $"Category with ID {id} not found for update.");
+
+            return ActionResultHelper.HandleSuccess(_logger, $"Category with ID {id} updated successfully.", result);
+        }
+        catch (Exception ex)
+        {
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while updating category with ID {id}.");
+        }
+    }
 }

@@ -1,12 +1,13 @@
 using clean_architecture.Commands.CreateProductCommand;
 using clean_architecture.Commands.DeleteProductCommand;
 using clean_architecture.Commands.UpdateProductCommand;
+using clean_architecture.Helpers;
 using clean_architecture.Queries.GetAllProductsQuery;
 using clean_architecture.Queries.GetProductByIdQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace clean_architecture.Controllers;
+
 
 [ApiController]
 [Route("api/v1/products")]
@@ -29,17 +30,13 @@ public class ProductsController : ControllerBase
             var products = await _mediator.Send(new GetAllProductsQuery());
 
             if (products == null || !products.Any())
-            {
-                _logger.LogWarning("No products found in the database.");
-                return NotFound("No products available.");
-            }
+                return ActionResultHelper.HandleNotFound(_logger, "No products found in the database.");
 
-            return Ok(products);
+            return ActionResultHelper.HandleSuccess(_logger, $"Successfully retrieved {products.Count} products.", products);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while fetching products.");
-            return StatusCode(500, "An internal server error occurred.");
+            return ActionResultHelper.HandleError(_logger, ex, "An error occurred while fetching products.");
         }
     }
 
@@ -49,14 +46,11 @@ public class ProductsController : ControllerBase
         try
         {
             var productId = await _mediator.Send(command);
-            _logger.LogInformation("Product created successfully with ID: {ProductId}", productId);
-            
-            return CreatedAtAction(nameof(GetProduct), new { id = productId }, productId);
+            return ActionResultHelper.HandleSuccess(_logger, $"Product created successfully with ID: {productId}", productId);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while creating a product.");
-            return StatusCode(500, "An internal server error occurred.");
+            return ActionResultHelper.HandleError(_logger, ex, "An error occurred while creating a product.");
         }
     }
 
@@ -68,17 +62,13 @@ public class ProductsController : ControllerBase
             var product = await _mediator.Send(new GetProductByIdQuery { id = id });
 
             if (product == null)
-            {
-                _logger.LogWarning("Product with ID {ProductId} not found.", id);
-                return NotFound("Product not found.");
-            }
+                return ActionResultHelper.HandleNotFound(_logger, $"Product with ID {id} not found.");
 
-            return Ok(product);
+            return ActionResultHelper.HandleSuccess(_logger, "Successfully retrieved product.", product);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while fetching product with ID {ProductId}.", id);
-            return StatusCode(500, "An internal server error occurred.");
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while fetching product with ID {id}.");
         }
     }
 
@@ -91,18 +81,13 @@ public class ProductsController : ControllerBase
             var result = await _mediator.Send(command);
 
             if (result == null)
-            {
-                _logger.LogWarning("Product with ID {ProductId} not found for update.", id);
-                return NotFound("Product not found.");
-            }
+                return ActionResultHelper.HandleNotFound(_logger, $"Product with ID {id} not found for update.");
 
-            _logger.LogInformation("Product with ID {ProductId} updated successfully.", id);
-            return NoContent();
+            return ActionResultHelper.HandleSuccess(_logger, $"Product with ID {id} updated successfully.", result);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while updating product with ID {ProductId}.", id);
-            return StatusCode(500, "An internal server error occurred.");
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while updating product with ID {id}.");
         }
     }
 
@@ -115,18 +100,13 @@ public class ProductsController : ControllerBase
             var result = await _mediator.Send(command);
 
             if (!result)
-            {
-                _logger.LogWarning("Product with ID {ProductId} not found for deletion.", id);
-                return NotFound("Product not found.");
-            }
+                return ActionResultHelper.HandleNotFound(_logger, $"Product with ID {id} not found for deletion.");
 
-            _logger.LogInformation("Product with ID {ProductId} deleted successfully.", id);
-            return Ok();
+            return ActionResultHelper.HandleSuccess(_logger, $"Product with ID {id} deleted successfully.", result);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while deleting product with ID {ProductId}.", id);
-            return StatusCode(500, "An internal server error occurred.");
+            return ActionResultHelper.HandleError(_logger, ex, $"An error occurred while deleting product with ID {id}.");
         }
     }
 }
