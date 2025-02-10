@@ -26,10 +26,9 @@ public class ProductsController : ControllerBase
     {
         var query = new GetAllProductsQuery { };
         var products = await _mediator.Send(query);
-        if (query == null)
+        if (products == null || !products.Any())
         {
-            return NotFound();
-            
+            return NotFound("No products available.");
         }
         return Ok(products);
     }
@@ -53,7 +52,8 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> Create([FromBody] CreateProductCommand command)
     {
         var productId = await _mediator.Send(command);
-        return CreatedAtAction(nameof(Create), new { id = productId }, productId);
+        return CreatedAtAction(nameof(GetProduct), new { id = productId }, productId);
+
     }
 
     [HttpPut ("{id}")]
@@ -68,7 +68,7 @@ public class ProductsController : ControllerBase
         {
             return NotFound("Product not found");
         }
-        return Ok(product);
+        return NoContent();
     }
     
     
