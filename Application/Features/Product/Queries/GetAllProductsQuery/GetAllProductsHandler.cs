@@ -16,7 +16,7 @@ public class GetAllProductsQueryHandler : BaseHandler ,  IRequestHandler<GetAllP
     public async Task<List<ProductDto>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
         // Fetch all products from the database
-        var products = await _dbContext.products.ToListAsync(cancellationToken);
+        var products = await _dbContext.products.AsNoTracking().ToListAsync(cancellationToken);
 
         // Map ProductEntity to ProductDto using AutoMapper
         var productDtos = _mapper.Map<List<ProductDto>>(products);
