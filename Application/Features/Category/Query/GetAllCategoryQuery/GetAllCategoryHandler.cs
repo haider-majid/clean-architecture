@@ -14,7 +14,7 @@ public class GetAllCategoryHandler : BaseHandler ,  IRequestHandler<GetAllCatego
     public async Task<List<CategoryDto>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
     {
         
-        var category = await _dbContext.categories.ToListAsync();
+        var category = await _dbContext.categories.AsNoTracking().ToListAsync();
         var categoryDto = _mapper.Map<List<CategoryDto>>(category);
         return categoryDto;
 
