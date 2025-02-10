@@ -4,6 +4,7 @@ using clean_architecture.Mappings;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,13 @@ var configuration = new ConfigurationBuilder()
 
 builder.Services.AddMediatR(typeof(Program).Assembly);
 
+// configure logging
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/app.log", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
+builder.Host.UseSerilog();
 // auto mapper
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 

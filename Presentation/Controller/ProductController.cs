@@ -10,80 +10,123 @@ namespace clean_architecture.Controllers;
 
 [ApiController]
 [Route("api/v1/products")]
-
 public class ProductsController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly ILogger<ProductsController> _logger;
 
-    public ProductsController(IMediator mediator)
+    public ProductsController(IMediator mediator, ILogger<ProductsController> logger)
     {
         _mediator = mediator;
+        _logger = logger;
     }
-    
 
     [HttpGet]
     public async Task<IActionResult> GetProducts()
     {
-        var query = new GetAllProductsQuery { };
-        var products = await _mediator.Send(query);
-        if (products == null || !products.Any())
+        try
         {
-            return NotFound("No products available.");
+            var products = await _mediator.Send(new GetAllProductsQuery());
+
+            if (products == null || !products.Any())
+            {
+                _logger.LogWarning("No products found in the database.");
+                return NotFound("No products available.");
+            }
+
+            return Ok(products);
         }
-        return Ok(products);
-    }
-    
-    [HttpGet("{id}")]
-
-    
-    public async Task<IActionResult> GetProduct([FromRoute] Guid id)
-    {
-        var query = new GetProductByIdQuery { id = id };
-        var product = await _mediator.Send(query);
-
-        if (product == null)
+        catch (Exception ex)
         {
-            return NotFound("Product not found");
+            _logger.LogError(ex, "An error occurred while fetching products.");
+            return StatusCode(500, "An internal server error occurred.");
         }
-        return Ok(product);
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductCommand command)
     {
-        var productId = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetProduct), new { id = productId }, productId);
-
-    }
-
-    [HttpPut ("{id}")]
-    public async Task<IActionResult> Update( [FromRoute] Guid id,[FromBody] UpdateProductCommand command)
-    {
-        
-        // Ensure the route ID is assigned to the command object
-        command.id = id;
-        
-        var product = await _mediator.Send(command);
-        if (product == null)
+        try
         {
-            return NotFound("Product not found");
+            var productId = await _mediator.Send(command);
+            _logger.LogInformation("Product created successfully with ID: {ProductId}", productId);
+            
+            return CreatedAtAction(nameof(GetProduct), new { id = productId }, productId);
         }
-        return NoContent();
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while creating a product.");
+            return StatusCode(500, "An internal server error occurred.");
+        }
     }
-    
-    
-    
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetProduct([FromRoute] Guid id)
+    {
+        try
+        {
+            var product = await _mediator.Send(new GetProductByIdQuery { id = id });
+
+            if (product == null)
+            {
+                _logger.LogWarning("Product with ID {ProductId} not found.", id);
+                return NotFound("Product not found.");
+            }
+
+            return Ok(product);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while fetching product with ID {ProductId}.", id);
+            return StatusCode(500, "An internal server error occurred.");
+        }
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateProductCommand command)
+    {
+        try
+        {
+            command.id = id;
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+            {
+                _logger.LogWarning("Product with ID {ProductId} not found for update.", id);
+                return NotFound("Product not found.");
+            }
+
+            _logger.LogInformation("Product with ID {ProductId} updated successfully.", id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while updating product with ID {ProductId}.", id);
+            return StatusCode(500, "An internal server error occurred.");
+        }
+    }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
-        var command = new DeleteProductCommand { id = id };
-        var product = await _mediator.Send(command);
-        if (!product)
+        try
         {
-            return NotFound("Product not found");
-        }
-        return Ok(command);
+            var command = new DeleteProductCommand { id = id };
+            var result = await _mediator.Send(command);
 
+            if (!result)
+            {
+                _logger.LogWarning("Product with ID {ProductId} not found for deletion.", id);
+                return NotFound("Product not found.");
+            }
+
+            _logger.LogInformation("Product with ID {ProductId} deleted successfully.", id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while deleting product with ID {ProductId}.", id);
+            return StatusCode(500, "An internal server error occurred.");
+        }
     }
 }
