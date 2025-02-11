@@ -23,22 +23,30 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetProducts()
+ 
+    public async Task<IActionResult> GetProducts([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
+        _logger.LogInformation($"Fetching products with Skip: {skip}, Take: {take}");
+
         try
         {
-            var products = await _mediator.Send(new GetAllProductsQuery());
+            var products = await _mediator.Send(new GetAllProductsQuery { Skip = skip, Take = take });
 
             if (products == null || !products.Any())
+            {
+                _logger.LogWarning("No products found after applying pagination.");
                 return ActionResultHelper.HandleNotFound(_logger, "No products found in the database.");
+            }
 
             return ActionResultHelper.HandleSuccess(_logger, $"Successfully retrieved {products.Count} products.", products);
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "An error occurred while fetching products.");
             return ActionResultHelper.HandleError(_logger, ex, "An error occurred while fetching products.");
         }
     }
+
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductCommand command)

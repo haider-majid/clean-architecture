@@ -422,3 +422,16 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/clean architecture.genruntimeconfig.cache
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/ref/clean architecture.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/AutoMapper.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.File.dll

@@ -7,4 +7,7 @@ namespace clean_architecture.Queries.GetAllProductsQuery;
 public class GetAllProductsQuery : IRequest<List<ProductDto>>
 {
     
+    public int Take { get; set; }
+    public int Skip { get; set; }
+    
 }
