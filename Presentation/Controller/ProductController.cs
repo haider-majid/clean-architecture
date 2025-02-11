@@ -24,13 +24,13 @@ public class ProductsController : ControllerBase
 
     [HttpGet]
  
-    public async Task<IActionResult> GetProducts([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public async Task<IActionResult> GetProducts([FromQuery] int skip = 0, [FromQuery] int take = 10 , [FromQuery] string search = "")
     {
         _logger.LogInformation($"Fetching products with Skip: {skip}, Take: {take}");
 
         try
         {
-            var products = await _mediator.Send(new GetAllProductsQuery { Skip = skip, Take = take });
+            var products = await _mediator.Send(new GetAllProductsQuery { Skip = skip, Take = take , Search = search});
 
             if (products == null || !products.Any())
             {

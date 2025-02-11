@@ -15,14 +15,18 @@ public class GetAllProductsQueryHandler : BaseHandler ,  IRequestHandler<GetAllP
 
     public async Task<List<ProductDto>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
-        // Fetch all products from the database
-        var products = await _dbContext.products
-            .AsNoTracking()
-            .Skip(request.Skip)
-            .Take(request.Take)
-            .ToListAsync(cancellationToken);
+        var query = _dbContext.products.AsNoTracking();
+
+        
+        
+        // Apply search filter if Search is not empty
+        if (!string.IsNullOrEmpty(request.Search))
+        {
+            string lowerSearch = request.Search.ToLower(); 
+            query = query.Where(x => x.Name.ToLower().Contains(lowerSearch)); 
+        }
         // Map ProductEntity to ProductDto using AutoMapper
-        var productDtos = _mapper.Map<List<ProductDto>>(products);
+        var productDtos = _mapper.Map<List<ProductDto>>(query);
 
         return productDtos;
     }
