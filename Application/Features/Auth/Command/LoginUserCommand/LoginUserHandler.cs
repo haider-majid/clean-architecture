@@ -33,6 +33,6 @@ public class LoginUserHandler : IRequestHandler<LoginUserCommand, AuthResponse>
 
         var token = tokenHandler.CreateToken(tokenDescriptor);
 
-        return Task.FromResult(new AuthResponse { Token = tokenHandler.WriteToken(token) });
+        return Task.FromResult(new AuthResponse { Token = tokenHandler.WriteToken(token) , Username = request.Username , StatusCode = 200 , Massage = "Login successfully." });
     }
 }
