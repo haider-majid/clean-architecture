@@ -6,17 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace clean_architecture.Controllers;
 
 
-
-
 [ApiController]
 [Route("api/v1/user")]
 public class UserController : ControllerBase
 {
     
     private readonly IMediator _mediator;
-    private readonly ILogger<CategoryController> _logger;
+    private readonly ILogger<UserController> _logger;
     
-    public UserController(IMediator mediator, ILogger<CategoryController> logger)
+    public UserController(IMediator mediator, ILogger<UserController> logger)
     {
         _mediator = mediator;
         _logger = logger;

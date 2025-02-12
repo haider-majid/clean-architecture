@@ -12,8 +12,13 @@ public class UserInfoHandler : BaseHandler , IRequestHandler<UserInfoQuery , Use
     
     public async Task<UserInfoDto> Handle(UserInfoQuery request, CancellationToken cancellationToken)
     {
-        var user = _dbContext.users.AsNoTracking();
+        var user =await _dbContext.users.FindAsync(request.UserId);
         var userDto = _mapper.Map<UserInfoDto>(user);
+        
+        if (user == null)
+        {
+            return null;
+        }
 
         return userDto;
         
