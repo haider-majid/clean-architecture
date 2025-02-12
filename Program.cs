@@ -1,9 +1,12 @@
+using System.Text;
 using System.Text.Json.Serialization;
 using clean_architecture.Data;
 using clean_architecture.Mappings;
 using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +27,9 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/app.log", rollingInterval: RollingInterval.Day)
     .CreateLogger();
+
+
+
 
 builder.Host.UseSerilog();
 // auto mapper
@@ -46,6 +52,30 @@ builder.Services.AddControllers();
 builder.Services.AddControllers()
     .AddFluentValidation(fv =>
         fv.RegisterValidatorsFromAssemblyContaining<Program>());
+
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var secretKey = jwtSettings["Secret"];
+
+if (string.IsNullOrEmpty(secretKey))
+    throw new Exception("JWT Secret key is missing from appsettings.json");
+
+// Decode the Base64 secret key
+var key = Convert.FromBase64String(secretKey);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 
 var app = builder.Build();
 

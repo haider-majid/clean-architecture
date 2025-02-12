@@ -287,6 +287,8 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/clean architecture.runtimeconfig.json
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/clean architecture.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/clean architecture.pdb
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/AutoMapper.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/BCrypt.Net-Next.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/FluentValidation.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
@@ -294,7 +296,9 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/MediatR.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/MediatR.Contracts.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Bcl.Memory.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Build.Locator.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
@@ -309,17 +313,36 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Mono.TextTemplating.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Npgsql.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.File.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -330,6 +353,7 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.Composition.Runtime.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.Composition.TypedParts.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.IO.Pipelines.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.Text.Encodings.Web.dll
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/System.Text.Json.dll
@@ -421,17 +445,3 @@
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/clean architecture.pdb
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/clean architecture.genruntimeconfig.cache
 /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/obj/Debug/net8.0/ref/clean architecture.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/AutoMapper.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.AspNetCore.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Console.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
-/Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/bin/Debug/net8.0/Serilog.Sinks.File.dll
