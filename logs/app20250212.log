@@ -1611,3 +1611,4 @@ FROM categories AS c
 2025-02-12 20:22:42.821 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 67.0023ms
 2025-02-12 20:22:42.821 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
 2025-02-12 20:22:42.821 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 76.0499ms
+2025-02-12 20:23:48.276 +03:00 [INF] Application is shutting down...
