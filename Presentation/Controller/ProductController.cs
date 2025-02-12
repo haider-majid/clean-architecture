@@ -5,10 +5,12 @@ using clean_architecture.Helpers;
 using clean_architecture.Queries.GetAllProductsQuery;
 using clean_architecture.Queries.GetProductByIdQuery;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 
+[Authorize]
 [ApiController]
 [Route("api/v1/products")]
 public class ProductsController : ControllerBase

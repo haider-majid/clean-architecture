@@ -1237,3 +1237,377 @@ System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorith
 2025-02-12 20:01:23.414 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 276.4872ms
 2025-02-12 20:01:23.414 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
 2025-02-12 20:01:23.414 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 292.9175ms
+2025-02-12 20:02:15.034 +03:00 [INF] Application is shutting down...
+2025-02-12 20:03:30.131 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-12 20:03:30.250 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-12 20:03:30.333 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-12 20:03:30.337 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-12 20:03:30.337 +03:00 [INF] Hosting environment: Development
+2025-02-12 20:03:30.337 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-12 20:03:30.671 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-12 20:03:31.120 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 449.649ms
+2025-02-12 20:03:31.363 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-12 20:03:31.572 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 256.2728ms
+2025-02-12 20:03:35.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:03:35.858 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-12 20:03:35.898 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:03:35.919 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-12 20:03:35.928 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-12 20:03:37.228 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-12 20:03:37.289 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-12 20:03:37.292 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1360.908ms.
+2025-02-12 20:03:37.300 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-12 20:03:37.320 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 1397.8306ms
+2025-02-12 20:03:37.321 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:03:37.333 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 1491.7816ms
+2025-02-12 20:04:31.684 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:04:31.706 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:04:31.713 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:04:31.714 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 29.6329ms
+2025-02-12 20:05:11.618 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-12 20:05:11.630 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:05:11.631 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:05:11.631 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 401 0 null 13.1322ms
+2025-02-12 20:08:23.109 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:08:23.131 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:08:23.131 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:08:23.131 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 22.5552ms
+2025-02-12 20:09:17.256 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/register - null null
+2025-02-12 20:09:17.264 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/register - 404 0 null 8.1338ms
+2025-02-12 20:09:17.267 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5070/api/v1/register, Response status code: 404
+2025-02-12 20:09:23.546 +03:00 [INF] Application is shutting down...
+2025-02-12 20:09:26.705 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-12 20:09:26.825 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-12 20:09:26.843 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-12 20:09:26.845 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-12 20:09:26.846 +03:00 [INF] Hosting environment: Development
+2025-02-12 20:09:26.846 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-12 20:09:27.865 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-12 20:09:27.972 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 111.0612ms
+2025-02-12 20:09:28.094 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-12 20:09:28.220 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 126.318ms
+2025-02-12 20:10:05.241 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/auth/register - null null
+2025-02-12 20:10:05.259 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-12 20:10:05.306 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-02-12 20:10:05.306 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-02-12 20:10:05.307 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/auth/register - 405 0 null 66.0676ms
+2025-02-12 20:10:12.120 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - null 0
+2025-02-12 20:10:12.126 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:12.158 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:10:12.176 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-02-12 20:10:12.200 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 39.106ms
+2025-02-12 20:10:12.201 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:12.201 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 415 null application/problem+json; charset=utf-8 81.0477ms
+2025-02-12 20:10:24.809 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register?username&password - null 0
+2025-02-12 20:10:24.813 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:24.813 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:10:24.823 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-02-12 20:10:24.824 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 10.2513ms
+2025-02-12 20:10:24.824 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:24.824 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register?username&password - 415 null application/problem+json; charset=utf-8 15.3841ms
+2025-02-12 20:10:34.328 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register?username=test&password=1234567 - null 0
+2025-02-12 20:10:34.328 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:34.328 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:10:34.329 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-02-12 20:10:34.329 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 0.6626ms
+2025-02-12 20:10:34.329 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:34.329 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register?username=test&password=1234567 - 415 null application/problem+json; charset=utf-8 1.5489ms
+2025-02-12 20:10:58.724 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 48
+2025-02-12 20:10:58.729 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:58.730 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:10:58.781 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-12 20:10:59.018 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 233.6255ms.
+2025-02-12 20:10:59.019 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-12 20:10:59.020 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 289.8382ms
+2025-02-12 20:10:59.020 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-12 20:10:59.020 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 296.1473ms
+2025-02-12 20:11:17.825 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 48
+2025-02-12 20:11:17.827 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:11:17.834 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:11:17.837 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-12 20:11:18.028 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 191.3859ms.
+2025-02-12 20:11:18.029 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-12 20:11:18.030 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 195.6296ms
+2025-02-12 20:11:18.030 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:11:18.030 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 205.2013ms
+2025-02-12 20:11:29.581 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:11:29.625 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:11:29.641 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:11:29.643 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:11:29.648 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:11:29.648 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 66.7515ms
+2025-02-12 20:11:44.028 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:11:44.033 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:11:44.033 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:11:44.034 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 5.9567ms
+2025-02-12 20:14:07.172 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:14:07.181 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:14:07.182 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:14:07.185 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:14:07.186 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:14:07.186 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 13.8525ms
+2025-02-12 20:14:34.571 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 48
+2025-02-12 20:14:34.572 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:14:34.573 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:14:34.578 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-12 20:14:34.751 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 172.3811ms.
+2025-02-12 20:14:34.751 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-12 20:14:34.751 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 177.6836ms
+2025-02-12 20:14:34.751 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:14:34.751 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 180.6685ms
+2025-02-12 20:14:42.120 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:14:42.122 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:14:42.123 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:14:42.123 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:14:42.123 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:14:42.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 2.9042ms
+2025-02-12 20:17:23.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:17:23.117 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:17:23.118 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:17:23.119 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:17:23.119 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:17:23.119 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 3.4538ms
+2025-02-12 20:17:33.558 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:17:33.562 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:17:33.563 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:17:33.564 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:17:33.564 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:17:33.564 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 6.2064ms
+2025-02-12 20:18:02.757 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:18:02.759 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:18:02.759 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:18:02.759 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:18:02.762 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-12 20:18:02.762 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-12 20:18:03.564 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-12 20:18:03.632 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-12 20:18:03.633 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 870.47ms.
+2025-02-12 20:18:03.635 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-12 20:18:03.642 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 880.4484ms
+2025-02-12 20:18:03.643 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:18:03.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 897.5664ms
+2025-02-12 20:18:13.806 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:18:13.809 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:18:13.810 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:18:13.811 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:18:13.811 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:18:13.811 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 4.7916ms
+2025-02-12 20:19:32.787 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:19:32.791 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:19:32.792 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:19:32.793 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:19:32.793 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:19:32.794 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 6.542ms
+2025-02-12 20:19:36.194 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 48
+2025-02-12 20:19:36.195 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:19:36.202 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-12 20:19:36.207 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-12 20:19:36.379 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 171.7678ms.
+2025-02-12 20:19:36.379 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-12 20:19:36.380 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 177.437ms
+2025-02-12 20:19:36.380 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-12 20:19:36.380 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 186.3844ms
+2025-02-12 20:19:44.825 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:19:44.826 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-12 20:19:44.827 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'lXwXDp7WO83xRD955ZKO8eCRNOjiydKOAIPTWv8fSgQ'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-02-12 20:19:44.827 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:19:44.828 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:19:44.828 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 2.9974ms
+2025-02-12 20:20:42.046 +03:00 [INF] Application is shutting down...
+2025-02-12 20:20:51.764 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-12 20:20:51.835 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-12 20:20:51.852 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-12 20:20:51.853 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-12 20:20:51.854 +03:00 [INF] Hosting environment: Development
+2025-02-12 20:20:51.854 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-12 20:20:52.411 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-12 20:20:52.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 103.7395ms
+2025-02-12 20:20:52.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-12 20:20:52.707 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 91.0478ms
+2025-02-12 20:20:55.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:20:55.476 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-12 20:20:55.566 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:20:55.579 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-12 20:20:55.585 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-12 20:20:56.461 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-12 20:20:56.543 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-12 20:20:56.547 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 958.725ms.
+2025-02-12 20:20:56.557 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-12 20:20:56.582 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 999.6091ms
+2025-02-12 20:20:56.583 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:20:56.596 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 1134.5613ms
+2025-02-12 20:21:01.422 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:21:01.427 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-12 20:21:01.435 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-12 20:21:01.435 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 12.9635ms
+2025-02-12 20:21:06.731 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:21:06.736 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:21:06.737 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-12 20:21:06.738 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-12 20:21:06.762 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-12 20:21:06.764 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-12 20:21:06.764 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25.3952ms.
+2025-02-12 20:21:06.765 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-12 20:21:06.765 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 27.5795ms
+2025-02-12 20:21:06.765 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:21:06.765 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 34.546ms
+2025-02-12 20:22:42.746 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-12 20:22:42.753 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:22:42.754 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-12 20:22:42.755 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-12 20:22:42.817 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-12 20:22:42.818 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-12 20:22:42.818 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 62.4175ms.
+2025-02-12 20:22:42.819 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-12 20:22:42.821 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 67.0023ms
+2025-02-12 20:22:42.821 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-12 20:22:42.821 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 76.0499ms

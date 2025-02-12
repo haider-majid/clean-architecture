@@ -4,10 +4,12 @@ using clean_architecture.Application.Features.Category.Command.UpdateCategoryCom
 using clean_architecture.Application.Features.Category.Query.GetCategoryQuery;
 using clean_architecture.Helpers;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace clean_architecture.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/v1/categories")]
 public class CategoryController : ControllerBase
@@ -20,6 +22,7 @@ public class CategoryController : ControllerBase
         _mediator = mediator;
         _logger = logger;
     }
+
 
     [HttpGet]
     public async Task<IActionResult> GetCategories()

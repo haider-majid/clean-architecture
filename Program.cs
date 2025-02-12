@@ -56,23 +56,25 @@ builder.Services.AddControllers()
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["Secret"];
 
-if (string.IsNullOrEmpty(secretKey))
-    throw new Exception("JWT Secret key is missing from appsettings.json");
-
-// Decode the Base64 secret key
-var key = Convert.FromBase64String(secretKey);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.RequireHttpsMetadata = false; 
+        options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(key),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
             ValidateIssuer = false,
-            ValidateAudience = false
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
         };
     });
+
+builder.Services.AddAuthorization();
+builder.Services.AddAuthorization();
 
 
 var app = builder.Build();
@@ -89,8 +91,8 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthentication();  
+app.UseAuthorization(); 
 
 app.MapControllers();
 
