@@ -26,7 +26,6 @@
 
     <ItemGroup>
       <Folder Include="Application\Features\Auth\Query\" />
-      <Folder Include="Application\Features\UserInfo\GetUserInfoQuery\Command\" />
       <Folder Include="Domain\Services\" />
       <Folder Include="Infrastructure\Services\" />
       <Folder Include="Presentation\Middleware\" />
