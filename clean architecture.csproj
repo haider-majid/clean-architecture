@@ -25,7 +25,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Features\Auth\Model\" />
       <Folder Include="Application\Features\Auth\Query\" />
       <Folder Include="Domain\Services\" />
       <Folder Include="Infrastructure\Services\" />

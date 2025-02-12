@@ -11,7 +11,7 @@ namespace clean_architecture.Application.Features.Auth.Command.LoginUserCommand;
 
 public class LoginUserHandler : IRequestHandler<LoginUserCommand, AuthResponse>
 {
-    private static readonly ConcurrentDictionary<string, string> _users = RegisterUserHandler._users;
+    private static readonly ConcurrentDictionary<string, string> _users = new ConcurrentDictionary<string, string>(RegisterUserHandler._users);
     private readonly string _jwtKey = "Your_Secret_Key_Here"; // Use the same key from Program.cs
 
     public Task<AuthResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)

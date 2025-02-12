@@ -24,10 +24,10 @@ public class AuthController : ControllerBase
             Password = request.Password
         });
 
-        if (!result)
+        if (result == null)
             return BadRequest("User already exists.");
 
-        return Ok("User registered successfully.");
+        return Ok(result);
     }
 
     [HttpPost("login")]
