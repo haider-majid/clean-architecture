@@ -25,7 +25,7 @@ public class AuthController : ControllerBase
         });
 
         if (result == null)
-            return BadRequest("User already exists.");
+            return BadRequest(result.Message);
 
         return Ok(result);
     }

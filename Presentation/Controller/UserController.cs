@@ -2,10 +2,10 @@ using clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.
 using clean_architecture.Application.Features.UserInfo.Query;
 using clean_architecture.Helpers;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace clean_architecture.Controllers;
-
 
 [ApiController]
 [Route("api/v1/users")]

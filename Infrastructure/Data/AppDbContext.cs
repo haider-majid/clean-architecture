@@ -12,7 +12,7 @@ public class AppDbContext : DbContext
 
     public DbSet<ProductEntity> products { get; set; }
     public DbSet<CategoryEntity> categories { get; set; }
-    public DbSet<UserInfoEntity> users { get; set; }
+    public DbSet<UserEntity> users { get; set; }
     
     
 }

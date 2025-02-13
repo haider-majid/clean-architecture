@@ -1,32 +1,50 @@
-using System.Collections.Concurrent;
+using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using clean_architecture.Application.Features.Auth.Model;
+using clean_architecture.Data;
+using clean_architecture.Entity;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace clean_architecture.Application.Features.Auth.Command.RegisterUserCommand;
 
-public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, RegisterUserResponse>
+public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCommand, RegisterUserResponse>
 {
-    public static readonly Dictionary<string, string> _users = new(); 
+    public RegisterUserHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 
-    public Task<RegisterUserResponse> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+    public async Task<RegisterUserResponse> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        if (_users.ContainsKey(request.Username))
+        // Check if the user already exists in the database
+        var existingUser = await _dbContext.users
+            .FirstOrDefaultAsync(u => u.Username == request.Username, cancellationToken);
+
+        if (existingUser != null)
         {
-            return Task.FromResult(new RegisterUserResponse
+            return new RegisterUserResponse
             {
-                Message = "User already exists.",
                 StatusCode = 400,
-                Username = request.Username
-            });
+                Message = "User already exists."
+            };
         }
 
-        _users[request.Username] = BCrypt.Net.BCrypt.HashPassword(request.Password);
+        // Hash the password before storing it
+        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
-        return Task.FromResult(new RegisterUserResponse
+        var newUser = new UserEntity
         {
-            Message = "User registered successfully.",
+            Username = request.Username,
+            PasswordHash = hashedPassword
+        };
+
+        _dbContext.users.Add(newUser);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+
+        return new RegisterUserResponse
+        {
             StatusCode = 200,
-            Username = request.Username
-        });
+            Message = "User registered successfully.",
+            Username = newUser.Username
+        };
     }
 }
