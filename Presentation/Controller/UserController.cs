@@ -27,7 +27,7 @@ public class UserController : ControllerBase
         try
         {
             var user = await _mediator.Send(new UserInfoQuery { UserId = id });
-
+ 
             if (user == null )
                 return ActionResultHelper.HandleNotFound(_logger, "No user found.");
 
@@ -46,7 +46,7 @@ public class UserController : ControllerBase
         try
         {
             command.UserId = id;
-            var user = await _mediator.Send(new UpdateUserInfoCommand { UserId = id });
+            var user = await _mediator.Send(command);
 
             if (user == null )
                 return ActionResultHelper.HandleNotFound(_logger, "No user found.");

@@ -7,6 +7,8 @@ namespace clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Comm
 public class UpdateUserInfoCommand : IRequest<bool>
 {
     
+    
+    [JsonIgnore]
     public Guid UserId { get; set; }
     public string name { get; set; }
     public string email { get; set; }
