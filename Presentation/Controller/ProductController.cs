@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 
 
-[Authorize]
+//[Authorize]
 [ApiController]
 [Route("api/v1/products")]
 public class ProductsController : ControllerBase
