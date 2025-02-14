@@ -1,6 +1,5 @@
 using AutoMapper;
 using clean_architecture.Application.Features.Category.Model;
-using clean_architecture.Application.Features.UserInfo.Model;
 using clean_architecture.Entity;
 using clean_architecture.Features.Product.Models;
 
@@ -12,6 +11,5 @@ public class MapperProfile : Profile
     {
         CreateMap<ProductEntity, ProductDto>();
         CreateMap<CategoryEntity, CategoryDto>();
-        CreateMap<UserInfoEntity, UserInfoDto>();
     }
 }
