@@ -1,0 +1,1131 @@
+2025-02-14 23:04:55.259 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:04:55.391 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:04:55.429 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:04:55.432 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:04:55.433 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:04:55.433 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:04:57.851 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:04:58.018 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 171.1294ms
+2025-02-14 23:04:58.126 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:04:58.222 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 96.274ms
+2025-02-14 23:05:04.495 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-14 23:05:04.506 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:05:04.544 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:05:04.561 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:05:04.594 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:05:05.623 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:05:05.709 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1110.96ms.
+2025-02-14 23:05:05.719 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:05:05.733 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1168.1783ms
+2025-02-14 23:05:05.734 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:05:05.748 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 1253.6577ms
+2025-02-14 23:05:54.234 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:05:54.254 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:05:54.265 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:05:54.271 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-14 23:05:54.353 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-14 23:05:54.375 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method60(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-14 23:05:54.402 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 131.0495ms.
+2025-02-14 23:05:54.403 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-14 23:05:54.404 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 138.1819ms
+2025-02-14 23:05:54.404 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:05:54.404 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 170.4253ms
+2025-02-14 23:11:08.758 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:11:08.772 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:11:08.792 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:11:08.797 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-14 23:11:08.935 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-14 23:11:08.939 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method60(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-14 23:11:08.941 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 142.7032ms.
+2025-02-14 23:11:08.941 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-14 23:11:08.942 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 149.779ms
+2025-02-14 23:11:08.943 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:11:08.943 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 185.451ms
+2025-02-14 23:11:29.773 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:11:29.782 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:11:29.785 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:11:29.788 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-14 23:11:29.801 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-14 23:11:29.802 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method60(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-14 23:11:29.804 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15.697ms.
+2025-02-14 23:11:29.804 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-14 23:11:29.804 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 18.9725ms
+2025-02-14 23:11:29.804 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:11:29.804 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 31.7418ms
+2025-02-14 23:14:03.432 +03:00 [INF] Application is shutting down...
+2025-02-14 23:14:07.816 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:14:07.904 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:14:07.927 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:14:07.930 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:14:07.930 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:14:07.930 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:14:08.412 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:14:08.522 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 110.981ms
+2025-02-14 23:14:08.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:14:08.729 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 86.2633ms
+2025-02-14 23:14:11.129 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:14:11.139 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:14:11.172 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:14:11.192 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:14:11.212 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-14 23:14:12.183 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-14 23:14:12.274 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 29
+2025-02-14 23:14:12.294 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1076.9665ms.
+2025-02-14 23:14:12.305 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-14 23:14:12.311 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1114.2969ms
+2025-02-14 23:14:12.312 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:14:12.327 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 1197.7922ms
+2025-02-14 23:20:30.009 +03:00 [INF] Application is shutting down...
+2025-02-14 23:20:32.700 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:20:32.761 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:20:32.778 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:20:32.780 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:20:32.780 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:20:32.780 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:20:33.358 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:20:33.499 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 141.6904ms
+2025-02-14 23:20:33.635 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:20:33.830 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 198.0083ms
+2025-02-14 23:20:37.318 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:20:37.326 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:20:37.360 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:20:37.379 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:20:37.398 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-14 23:20:38.385 +03:00 [ERR] Failed executing DbCommand (60ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username", u.email, u.location, u.name
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-14 23:20:38.408 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:20:38.426 +03:00 [ERR] An error occurred while fetching user.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 16
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 29
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:20:38.437 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1035.1321ms.
+2025-02-14 23:20:38.448 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-14 23:20:38.453 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1069.1828ms
+2025-02-14 23:20:38.454 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-14 23:20:38.469 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 1151.2964ms
+2025-02-14 23:20:45.923 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-14 23:20:45.925 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:20:45.930 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:20:45.958 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:20:45.990 +03:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username", u.email, u.location, u.name
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:20:45.991 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:20:45.994 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 63.7674ms
+2025-02-14 23:20:45.994 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:20:45.995 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:20:46.005 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 82.7846ms
+2025-02-14 23:21:06.155 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-14 23:21:06.161 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:21:06.164 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:21:06.166 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-14 23:21:06.220 +03:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username", u.email, u.location, u.name
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:21:06.221 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:21:06.224 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 59.8325ms
+2025-02-14 23:21:06.225 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:21:06.225 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.LoginUserCommand.LoginUserHandler.Handle(LoginUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/LoginUserCommand/LoginUserHandler.cs:line 22
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Login(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:21:06.231 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 500 null text/plain; charset=utf-8 75.5976ms
+2025-02-14 23:22:36.842 +03:00 [INF] Application is shutting down...
+2025-02-14 23:22:39.549 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:22:39.611 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:22:39.626 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:22:39.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:22:39.628 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:22:39.628 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:22:39.872 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:22:40.040 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 169.2591ms
+2025-02-14 23:22:40.165 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:22:40.410 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 261.5119ms
+2025-02-14 23:22:42.950 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-14 23:22:42.956 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:22:42.973 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:22:42.988 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:22:43.017 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:22:43.956 +03:00 [ERR] Failed executing DbCommand (59ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username", u.email, u.location, u.name
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:22:43.979 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:22:44.006 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1012.9445ms
+2025-02-14 23:22:44.007 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:22:44.012 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.email does not exist
+
+POSITION: 51
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.email does not exist
+    Position: 51
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:22:44.037 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 1086.6068ms
+2025-02-14 23:23:16.969 +03:00 [INF] Application is shutting down...
+2025-02-14 23:23:19.159 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:23:19.219 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:23:19.231 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:23:19.233 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:23:19.233 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:23:19.233 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:23:19.476 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:23:19.579 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 104.481ms
+2025-02-14 23:23:19.678 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:23:19.790 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 113.0485ms
+2025-02-14 23:23:25.029 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-14 23:23:25.038 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:23:25.072 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:23:25.093 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:23:25.128 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:23:26.052 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:23:26.129 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 997.6752ms.
+2025-02-14 23:23:26.138 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:23:26.152 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1055.3457ms
+2025-02-14 23:23:26.153 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:23:26.166 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 1137.3871ms
+2025-02-14 23:23:33.318 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-14 23:23:33.321 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:23:33.325 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:23:33.327 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-14 23:23:33.347 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:23:33.356 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 31.4051ms
+2025-02-14 23:23:33.357 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:23:33.357 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at clean_architecture.Application.Features.Auth.Command.LoginUserCommand.LoginUserHandler.Handle(LoginUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/LoginUserCommand/LoginUserHandler.cs:line 25
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Login(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-14 23:23:33.374 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 500 null text/plain; charset=utf-8 56.5537ms
+2025-02-14 23:23:49.855 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-14 23:23:49.860 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:23:49.861 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:23:49.865 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-14 23:23:49.915 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:23:49.916 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 54.6785ms
+2025-02-14 23:23:49.916 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:23:49.917 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at clean_architecture.Application.Features.Auth.Command.LoginUserCommand.LoginUserHandler.Handle(LoginUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/LoginUserCommand/LoginUserHandler.cs:line 25
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Login(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-14 23:23:49.920 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 500 null text/plain; charset=utf-8 64.8327ms
+2025-02-14 23:24:24.954 +03:00 [INF] Application is shutting down...
+2025-02-14 23:26:10.699 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-14 23:26:10.831 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-02-14 23:26:10.835 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-14 23:26:10.836 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-02-14 23:26:10.836 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-14 23:26:10.841 +03:00 [INF] Applying migration '20250214202602_addnew'.
+2025-02-14 23:26:10.844 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250214202602_addnew', '9.0.1');
+2025-02-14 23:26:18.958 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:26:19.017 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:26:19.030 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:26:19.032 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:26:19.032 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:26:19.032 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:26:19.650 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:26:19.751 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 103.4942ms
+2025-02-14 23:26:19.852 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:26:19.988 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.3928ms
+2025-02-14 23:26:24.766 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-14 23:26:24.778 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:26:24.816 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-14 23:26:24.834 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-14 23:26:24.842 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-14 23:26:25.721 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-14 23:26:25.798 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-14 23:26:25.803 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 956.6867ms.
+2025-02-14 23:26:25.812 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-14 23:26:25.836 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 998.0395ms
+2025-02-14 23:26:25.837 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-14 23:26:25.851 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 1084.7572ms
+2025-02-14 23:26:44.971 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 56
+2025-02-14 23:26:44.982 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:26:44.997 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:26:45.045 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:26:45.153 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:26:45.182 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 136.9025ms.
+2025-02-14 23:26:45.183 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:26:45.184 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 185.9619ms
+2025-02-14 23:26:45.184 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:26:45.184 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 213.221ms
+2025-02-14 23:26:55.177 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-14 23:26:55.181 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:26:55.185 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:26:55.188 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-14 23:26:55.245 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:26:55.504 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 316.5997ms.
+2025-02-14 23:26:55.505 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-14 23:26:55.506 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 320.52ms
+2025-02-14 23:26:55.506 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:26:55.506 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 329.4151ms
+2025-02-14 23:27:02.888 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 53
+2025-02-14 23:27:02.889 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:27:02.890 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:27:02.893 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-14 23:27:02.897 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:27:02.898 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.7405ms.
+2025-02-14 23:27:02.898 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-14 23:27:02.898 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 7.9952ms
+2025-02-14 23:27:02.898 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-14 23:27:02.898 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 10.872ms
+2025-02-14 23:27:25.449 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-14 23:27:25.456 +03:00 [INF] Executing endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-14 23:27:25.464 +03:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(Int32, Int32, System.String) on controller ProductsController (clean architecture).
+2025-02-14 23:27:25.472 +03:00 [INF] Executing action method ProductsController.GetProducts (clean architecture) - Validation state: "Valid"
+2025-02-14 23:27:25.474 +03:00 [INF] Fetching products with Skip: 0, Take: 10
+2025-02-14 23:27:25.507 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Description", p."Name"
+FROM products AS p
+2025-02-14 23:27:25.511 +03:00 [INF] Successfully retrieved 3 products.
+2025-02-14 23:27:25.511 +03:00 [INF] Executed action method ProductsController.GetProducts (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 39.0329ms.
+2025-02-14 23:27:25.512 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Features.Product.Models.ProductDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-14 23:27:25.514 +03:00 [INF] Executed action ProductsController.GetProducts (clean architecture) in 50.1074ms
+2025-02-14 23:27:25.514 +03:00 [INF] Executed endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-14 23:27:25.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 200 null application/json; charset=utf-8 65.2116ms
+2025-02-14 23:28:20.021 +03:00 [INF] Application is shutting down...
+2025-02-14 23:39:31.218 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:39:31.294 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:39:31.311 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:39:31.313 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:39:31.313 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:39:31.313 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:39:31.785 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:39:31.889 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 104.562ms
+2025-02-14 23:39:32.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:39:32.418 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 96.3059ms
+2025-02-14 23:39:58.406 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:39:58.419 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:39:58.461 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:39:58.481 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:39:58.500 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:39:59.464 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:39:59.541 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1037.5935ms.
+2025-02-14 23:39:59.550 +03:00 [INF] Executing OkObjectResult, writing value of type 'UserEntity'.
+2025-02-14 23:39:59.571 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 1086.5093ms
+2025-02-14 23:39:59.572 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:39:59.585 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 1179.572ms
+2025-02-14 23:40:10.794 +03:00 [INF] Application is shutting down...
+2025-02-14 23:43:50.760 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:43:50.822 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:43:50.837 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:43:50.839 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:43:50.839 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:43:50.839 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:43:51.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:43:51.566 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 103.4035ms
+2025-02-14 23:43:51.664 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:43:51.801 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 138.2607ms
+2025-02-14 23:43:55.069 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-14 23:43:55.084 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:43:55.122 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:43:55.140 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:43:55.161 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:43:56.132 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:43:56.216 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1051.9717ms.
+2025-02-14 23:43:56.225 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:43:56.246 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 1102.4735ms
+2025-02-14 23:43:56.246 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:43:56.260 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 1191.1397ms
+2025-02-14 23:44:09.628 +03:00 [INF] Application is shutting down...
+2025-02-14 23:49:04.275 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:49:04.335 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:49:04.348 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:49:04.350 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:49:04.350 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:49:04.350 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:49:04.961 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:49:05.077 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 116.9654ms
+2025-02-14 23:49:05.181 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:49:05.316 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.3723ms
+2025-02-14 23:49:31.394 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 82
+2025-02-14 23:49:31.416 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:49:31.463 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:49:31.483 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:49:31.517 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:49:32.499 +03:00 [ERR] Failed executing DbCommand (62ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:49:32.523 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.Loaction does not exist
+
+POSITION: 19
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Loaction does not exist
+    Position: 19
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.Loaction does not exist
+
+POSITION: 19
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Loaction does not exist
+    Position: 19
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:49:32.551 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1064.0655ms
+2025-02-14 23:49:32.553 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:49:32.558 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.Loaction does not exist
+
+POSITION: 19
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Loaction does not exist
+    Position: 19
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-14 23:49:32.585 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 1190.941ms
+2025-02-14 23:50:16.505 +03:00 [INF] Application is shutting down...
+eters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-14 23:50:13.403 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-02-14 23:50:13.407 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-14 23:50:13.408 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-02-14 23:50:13.409 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-14 23:50:13.414 +03:00 [INF] Applying migration '20250214205003_updateUserModel'.
+2025-02-14 23:50:13.423 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users ADD "Loaction" text NOT NULL DEFAULT '';
+2025-02-14 23:50:13.424 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250214205003_updateUserModel', '9.0.1');
+2025-02-14 23:50:19.223 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-14 23:50:19.292 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-14 23:50:19.312 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-14 23:50:19.315 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-14 23:50:19.315 +03:00 [INF] Hosting environment: Development
+2025-02-14 23:50:19.315 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-14 23:50:19.567 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-14 23:50:19.669 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 102.9277ms
+2025-02-14 23:50:19.774 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-14 23:50:19.917 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 143.82ms
+2025-02-14 23:50:22.426 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 82
+2025-02-14 23:50:22.438 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-14 23:50:22.458 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:50:22.475 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:50:22.511 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:50:23.423 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:50:23.827 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "Loaction", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3);
+2025-02-14 23:50:23.838 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1323.4596ms.
+2025-02-14 23:50:23.844 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:50:23.854 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1377.0439ms
+2025-02-14 23:50:23.855 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:50:23.865 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 1439.6698ms
+2025-02-14 23:50:47.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063a-1166-7546-9998-4a4b2e1248e7 - null null
+2025-02-14 23:50:47.360 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:50:47.366 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:50:47.368 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:50:47.398 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:50:47.413 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 45.6743ms.
+2025-02-14 23:50:47.414 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:50:47.421 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 55.355ms
+2025-02-14 23:50:47.421 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:50:47.422 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063a-1166-7546-9998-4a4b2e1248e7 - 200 null application/json; charset=utf-8 67.2688ms
+2025-02-14 23:51:31.670 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063a-1166-7546-9998-4a4b2e1248e7 - null null
+2025-02-14 23:51:31.679 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:51:31.685 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:51:31.686 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:51:31.732 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:51:31.733 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 46.2347ms.
+2025-02-14 23:51:31.733 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:51:31.736 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 50.8684ms
+2025-02-14 23:51:31.736 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:51:31.737 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063a-1166-7546-9998-4a4b2e1248e7 - 200 null application/json; charset=utf-8 66.2753ms
+2025-02-14 23:52:07.966 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 83
+2025-02-14 23:52:07.970 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:52:07.973 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:52:07.976 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:52:07.979 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:52:08.227 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "Loaction", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3);
+2025-02-14 23:52:08.228 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 251.9935ms.
+2025-02-14 23:52:08.228 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:52:08.229 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 255.6771ms
+2025-02-14 23:52:08.229 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:52:08.229 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 262.6841ms
+2025-02-14 23:52:20.699 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063b-a9a0-7994-8df0-57d1a691b414 - null null
+2025-02-14 23:52:20.706 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:52:20.707 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:52:20.710 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:52:20.727 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:52:20.729 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.6519ms.
+2025-02-14 23:52:20.729 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:52:20.730 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 22.1124ms
+2025-02-14 23:52:20.730 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:52:20.730 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063b-a9a0-7994-8df0-57d1a691b414 - 200 null application/json; charset=utf-8 31.3249ms
+2025-02-14 23:53:31.937 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063b-a9a0-7994-8df0-57d1a691b414 - null null
+2025-02-14 23:53:31.940 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:53:31.940 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:53:31.941 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:53:31.949 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:53:31.950 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.4043ms.
+2025-02-14 23:53:31.950 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:53:31.952 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 11.2247ms
+2025-02-14 23:53:31.952 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:53:31.953 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063b-a9a0-7994-8df0-57d1a691b414 - 200 null application/json; charset=utf-8 15.3397ms
+2025-02-14 23:53:40.997 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 92
+2025-02-14 23:53:40.999 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:53:40.999 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-14 23:53:41.001 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-14 23:53:41.005 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-14 23:53:41.180 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "Loaction", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3);
+2025-02-14 23:53:41.181 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 179.5605ms.
+2025-02-14 23:53:41.181 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-14 23:53:41.181 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 181.8471ms
+2025-02-14 23:53:41.181 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-14 23:53:41.181 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 184.18ms
+2025-02-14 23:53:55.323 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063d-14b7-7685-a2d6-79a4ee55a1c0 - null null
+2025-02-14 23:53:55.326 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:53:55.327 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-14 23:53:55.331 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-14 23:53:55.339 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-14 23:53:55.343 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.7624ms.
+2025-02-14 23:53:55.344 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-14 23:53:55.344 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 17.7082ms
+2025-02-14 23:53:55.344 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-14 23:53:55.345 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0195063d-14b7-7685-a2d6-79a4ee55a1c0 - 200 null application/json; charset=utf-8 22.1695ms
+2025-02-14 23:54:11.309 +03:00 [INF] Application is shutting down...

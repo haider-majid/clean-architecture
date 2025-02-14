@@ -1,0 +1,1505 @@
+2025-02-13 09:11:25.094 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 09:11:25.185 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 09:11:25.206 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 09:11:25.208 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 09:11:25.209 +03:00 [INF] Hosting environment: Development
+2025-02-13 09:11:25.209 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 09:11:33.889 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 09:11:34.000 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 112.1759ms
+2025-02-13 09:11:34.105 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 09:11:34.189 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 84.386ms
+2025-02-13 09:14:46.631 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:14:46.666 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 09:14:46.714 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:14:46.748 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:14:46.775 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:14:47.908 +03:00 [INF] Executed DbCommand (82ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:14:47.987 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:14:47.991 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1212.7746ms.
+2025-02-13 09:14:48.003 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:14:48.026 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1274.6774ms
+2025-02-13 09:14:48.028 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:14:48.043 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 1414.5762ms
+2025-02-13 09:15:04.431 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 09:15:04.436 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:15:04.444 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:15:04.486 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:15:04.516 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:15:04.572 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 09:15:04.579 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 09:15:04.580 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 93.7146ms.
+2025-02-13 09:15:04.580 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 09:15:04.583 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 138.7049ms
+2025-02-13 09:15:04.583 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:15:04.583 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 152.3667ms
+2025-02-13 09:15:08.398 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:15:08.402 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:15:08.403 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:15:08.404 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:15:08.470 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:15:08.471 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:15:08.471 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 67.0495ms.
+2025-02-13 09:15:08.472 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:15:08.472 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 69.0202ms
+2025-02-13 09:15:08.472 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:15:08.472 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 74.3134ms
+2025-02-13 09:18:09.081 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 09:18:09.086 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:18:09.100 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:18:09.105 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:18:09.132 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:18:09.140 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 09:18:09.142 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 09:18:09.142 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 36.9445ms.
+2025-02-13 09:18:09.142 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 09:18:09.143 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 42.9621ms
+2025-02-13 09:18:09.143 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:18:09.143 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 62.973ms
+2025-02-13 09:18:12.698 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:18:12.701 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:18:12.706 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:18:12.707 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:18:12.714 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:18:12.715 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:18:12.715 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.0538ms.
+2025-02-13 09:18:12.716 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:18:12.718 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 11.0457ms
+2025-02-13 09:18:12.718 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:18:12.718 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 19.6208ms
+2025-02-13 09:19:27.106 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 09:19:27.117 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 10.6377ms
+2025-02-13 09:19:27.254 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 09:19:27.274 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.6961ms
+2025-02-13 09:19:33.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:19:33.197 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:19:33.204 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:19:33.205 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:19:33.214 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:19:33.215 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:19:33.215 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.8167ms.
+2025-02-13 09:19:33.216 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:19:33.217 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 13.2104ms
+2025-02-13 09:19:33.218 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:19:33.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 22.4232ms
+2025-02-13 09:19:40.722 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 09:19:40.725 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:19:40.730 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:19:40.736 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:19:40.741 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:19:40.745 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 09:19:40.746 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 09:19:40.746 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.359ms.
+2025-02-13 09:19:40.747 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 09:19:40.747 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 16.7251ms
+2025-02-13 09:19:40.748 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:19:40.748 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 26.3273ms
+2025-02-13 09:22:01.996 +03:00 [INF] Application is shutting down...
+2025-02-13 09:22:06.037 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 09:22:06.100 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 09:22:06.116 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 09:22:06.117 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 09:22:06.117 +03:00 [INF] Hosting environment: Development
+2025-02-13 09:22:06.117 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 09:22:06.717 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 09:22:06.828 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 110.989ms
+2025-02-13 09:22:07.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 09:22:07.356 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 91.4478ms
+2025-02-13 09:22:15.646 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:22:15.656 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 09:22:15.710 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:22:15.730 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:22:15.748 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:22:16.762 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:22:16.846 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:22:16.850 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1098.8201ms.
+2025-02-13 09:22:16.859 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:22:16.880 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1147.1587ms
+2025-02-13 09:22:16.882 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:22:16.895 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 1248.82ms
+2025-02-13 09:22:22.648 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 09:22:22.654 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:22:22.662 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:22:22.708 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:22:22.737 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:22:22.791 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 09:22:22.799 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 09:22:22.799 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 90.9769ms.
+2025-02-13 09:22:22.800 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 09:22:22.802 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 139.3572ms
+2025-02-13 09:22:22.802 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 09:22:22.802 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 154.1533ms
+2025-02-13 09:22:26.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:22:26.755 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:22:26.756 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:22:26.757 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:22:26.814 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:22:26.816 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:22:26.816 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 58.7884ms.
+2025-02-13 09:22:26.816 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:22:26.816 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 60.5505ms
+2025-02-13 09:22:26.817 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:22:26.817 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 65.7524ms
+2025-02-13 09:23:46.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 09:23:46.736 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:23:46.738 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 09:23:46.740 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 09:23:46.756 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 09:23:46.758 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 09:23:46.758 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17.9735ms.
+2025-02-13 09:23:46.759 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 09:23:46.760 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 21.7754ms
+2025-02-13 09:23:46.760 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 09:23:46.760 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 34.477ms
+2025-02-13 10:13:00.448 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 10:13:00.473 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 10:13:00.485 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 10:13:00.485 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 401 0 null 37.1503ms
+2025-02-13 10:16:31.498 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 10:16:31.507 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 9.5651ms
+2025-02-13 10:16:31.677 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 10:16:31.704 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.6948ms
+2025-02-13 10:16:51.310 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 10:16:51.319 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 8.7305ms
+2025-02-13 10:16:51.396 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 10:16:51.404 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.5126ms
+2025-02-13 10:16:55.992 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 10:16:55.994 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 10:16:56.006 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 10:16:56.019 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 10:16:56.268 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 248.3401ms.
+2025-02-13 10:16:56.268 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-13 10:16:56.269 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 262.3491ms
+2025-02-13 10:16:56.269 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 10:16:56.269 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 277.153ms
+2025-02-13 10:17:03.651 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-13 10:17:03.654 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 10:17:03.662 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 10:17:03.663 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-13 10:17:03.873 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 209.1895ms.
+2025-02-13 10:17:03.873 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-13 10:17:03.874 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 211.8747ms
+2025-02-13 10:17:03.874 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 10:17:03.874 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 223.0097ms
+2025-02-13 10:17:17.898 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 10:17:17.908 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 10:17:17.910 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 10:17:17.910 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 401 0 null 12.0929ms
+2025-02-13 10:18:00.434 +03:00 [INF] Application is shutting down...
+2025-02-13 10:18:04.579 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 10:18:04.638 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 10:18:04.653 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 10:18:04.654 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 10:18:04.655 +03:00 [INF] Hosting environment: Development
+2025-02-13 10:18:04.655 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 10:18:04.908 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 10:18:05.032 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 124.2877ms
+2025-02-13 10:18:05.126 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 10:18:05.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 109.1083ms
+2025-02-13 10:18:21.800 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 10:18:21.814 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 10:18:21.861 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 10:18:21.882 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 10:18:21.901 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 10:18:22.871 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 10:18:22.967 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 10:18:22.972 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1067.5153ms.
+2025-02-13 10:18:22.984 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 10:18:23.011 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1123.7703ms
+2025-02-13 10:18:23.012 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 10:18:23.028 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 1230.3321ms
+2025-02-13 10:19:01.539 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 10:19:01.545 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 10:19:01.554 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 10:19:01.597 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 10:19:01.627 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 10:19:01.682 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 10:19:01.689 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 10:19:01.689 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 91.8171ms.
+2025-02-13 10:19:01.690 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 10:19:01.692 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 137.7906ms
+2025-02-13 10:19:01.692 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 10:19:01.692 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 153.6871ms
+2025-02-13 10:23:55.847 +03:00 [INF] Application is shutting down...
+2025-02-13 10:23:58.758 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 10:23:58.826 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 10:23:58.842 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 10:23:58.844 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 10:23:58.844 +03:00 [INF] Hosting environment: Development
+2025-02-13 10:23:58.844 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 10:23:59.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 10:23:59.451 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 124.7646ms
+2025-02-13 10:23:59.549 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 10:23:59.660 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 112.0265ms
+2025-02-13 10:24:05.819 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - application/json 91
+2025-02-13 10:24:05.828 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 10:24:05.873 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 10:24:05.896 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, clean_architecture.Application.Features.UserInfo.GetUserInfoQuery.Command.UpdateUserInfoCommand.UpdateUserInfoCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 10:24:05.930 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture) - Validation state: "Valid"
+2025-02-13 10:24:06.936 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 10:24:07.082 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET email = @p0, location = @p1, name = @p2, password = @p3, "userName" = @p4
+WHERE id = @p5;
+2025-02-13 10:24:07.092 +03:00 [INF] Successfully retrieved True user.
+2025-02-13 10:24:07.097 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.UpdateUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1163.237ms.
+2025-02-13 10:24:07.107 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-13 10:24:07.121 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.UpdateUser (clean architecture) in 1220.0695ms
+2025-02-13 10:24:07.122 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.UpdateUser (clean architecture)'
+2025-02-13 10:24:07.145 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 1325.9114ms
+2025-02-13 10:24:10.769 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 10:24:10.776 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 10:24:10.781 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 10:24:10.783 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 10:24:10.809 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.email, u.location, u.name, u.password, u."userName"
+FROM users AS u
+WHERE u.id = @__p_0
+LIMIT 1
+2025-02-13 10:24:10.818 +03:00 [INF] Successfully retrieved clean_architecture.Application.Features.UserInfo.Model.UserInfoDto user.
+2025-02-13 10:24:10.819 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 35.115ms.
+2025-02-13 10:24:10.819 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.UserInfo.Model.UserInfoDto'.
+2025-02-13 10:24:10.829 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 47.9456ms
+2025-02-13 10:24:10.830 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 10:24:10.830 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 61.2895ms
+2025-02-13 10:25:33.573 +03:00 [INF] Application is shutting down...
+2025-02-13 10:34:03.844 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 10:34:03.909 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 10:34:03.928 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 10:34:03.929 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 10:34:03.930 +03:00 [INF] Hosting environment: Development
+2025-02-13 10:34:03.930 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 10:34:04.358 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 10:34:04.455 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 98.141ms
+2025-02-13 10:34:04.555 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 10:34:04.671 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 116.9787ms
+2025-02-13 10:34:40.776 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 10:34:40.801 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 10:34:40.851 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 10:34:40.854 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 10:34:40.854 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 401 0 null 78.0877ms
+2025-02-13 10:59:04.024 +03:00 [INF] Application is shutting down...
+2025-02-13 11:07:55.153 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:07:55.240 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:07:55.281 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:07:55.284 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:07:55.284 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:07:55.284 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:07:55.646 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:07:55.766 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 120.5004ms
+2025-02-13 11:07:55.878 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:07:55.995 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 117.1911ms
+2025-02-13 11:08:12.108 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-13 11:08:12.121 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 11:08:12.161 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 11:08:12.177 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:08:12.208 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-13 11:08:13.184 +03:00 [ERR] Failed executing DbCommand (60ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:08:13.208 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:08:13.234 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 1052.5893ms
+2025-02-13 11:08:13.235 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 11:08:13.240 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.LoginUserCommand.LoginUserHandler.Handle(LoginUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/LoginUserCommand/LoginUserHandler.cs:line 22
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Login(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:08:13.269 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 500 null text/plain; charset=utf-8 1161.6291ms
+2025-02-13 11:08:24.877 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 11:08:24.890 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:08:24.897 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:08:24.901 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 11:08:24.933 +03:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:08:24.934 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:08:24.939 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 41.5427ms
+2025-02-13 11:08:24.939 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:08:24.940 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:08:24.950 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 72.699ms
+2025-02-13 11:10:58.216 +03:00 [INF] Application is shutting down...
+2025-02-13 11:11:00.579 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:11:00.640 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:11:00.654 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:11:00.656 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:11:00.656 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:11:00.656 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:11:00.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:11:00.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 109.7752ms
+2025-02-13 11:11:01.059 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:11:01.192 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.7375ms
+2025-02-13 11:11:07.163 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 11:11:07.179 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 11:11:07.219 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:11:07.242 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:11:07.273 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 11:11:08.201 +03:00 [ERR] Failed executing DbCommand (58ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:11:08.223 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:11:08.250 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1003.7092ms
+2025-02-13 11:11:08.251 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:11:08.257 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.Id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Id does not exist
+    Hint: Perhaps you meant to reference the column "u.id".
+    Position: 8
+    File: parse_relation.c
+    Line: 3732
+    Routine: errorMissingColumn
+2025-02-13 11:11:08.285 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 1122.1755ms
+2025-02-13 11:11:38.627 +03:00 [INF] Application is shutting down...
+2025-02-13 11:11:41.123 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:11:41.186 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:11:41.199 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:11:41.201 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:11:41.201 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:11:41.201 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:11:41.309 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:11:41.399 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 91.0815ms
+2025-02-13 11:11:41.498 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:11:41.606 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 108.0805ms
+2025-02-13 11:11:45.168 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 11:11:45.180 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 11:11:45.221 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:11:45.243 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:11:45.275 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 11:11:46.213 +03:00 [ERR] Failed executing DbCommand (58ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:11:46.236 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'clean_architecture.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.user_id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.user_id does not exist
+    Position: 8
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.user_id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.user_id does not exist
+    Position: 8
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-13 11:11:46.262 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1014.1286ms
+2025-02-13 11:11:46.263 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:11:46.268 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.user_id does not exist
+
+POSITION: 8
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at clean_architecture.Application.Features.Auth.Command.RegisterUserCommand.RegisterUserHandler.Handle(RegisterUserCommand request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/Auth/Command/RegisterUserCommand/RegisterUserHandler.cs:line 19
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AuthController.Register(AuthRequest request) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.user_id does not exist
+    Position: 8
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-02-13 11:11:46.291 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 500 null text/plain; charset=utf-8 1123.3055ms
+2025-02-13 11:13:05.703 +03:00 [INF] Application is shutting down...
+eters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-13 11:13:01.515 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-02-13 11:13:01.519 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-13 11:13:01.520 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-02-13 11:13:01.520 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-13 11:13:01.525 +03:00 [INF] Applying migration '20250213081254_updatregister'.
+2025-02-13 11:13:01.533 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users DROP COLUMN email;
+2025-02-13 11:13:01.533 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users DROP COLUMN location;
+2025-02-13 11:13:01.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users DROP COLUMN name;
+2025-02-13 11:13:01.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users RENAME COLUMN "userName" TO "Username";
+2025-02-13 11:13:01.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users RENAME COLUMN id TO user_id;
+2025-02-13 11:13:01.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users RENAME COLUMN password TO "PasswordHash";
+2025-02-13 11:13:01.536 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250213081254_updatregister', '9.0.1');
+2025-02-13 11:13:09.036 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:13:09.091 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:13:09.104 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:13:09.106 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:13:09.106 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:13:09.106 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:13:09.326 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:13:09.433 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 109.1818ms
+2025-02-13 11:13:09.545 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:13:09.715 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 172.574ms
+2025-02-13 11:13:17.580 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 11:13:17.596 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 11:13:17.649 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:13:17.667 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:13:17.704 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 11:13:18.657 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:13:18.734 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1025.8261ms.
+2025-02-13 11:13:18.743 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-13 11:13:18.757 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 1086.5973ms
+2025-02-13 11:13:18.758 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:13:18.774 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 1194.0802ms
+2025-02-13 11:14:00.799 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 50
+2025-02-13 11:14:00.807 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:14:00.808 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:14:00.811 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 11:14:00.835 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:14:01.153 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2);
+2025-02-13 11:14:01.160 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 348.9892ms.
+2025-02-13 11:14:01.160 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-13 11:14:01.161 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 352.6335ms
+2025-02-13 11:14:01.161 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 11:14:01.161 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 362.1261ms
+2025-02-13 11:14:41.736 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/login - application/json 50
+2025-02-13 11:14:41.745 +03:00 [INF] Executing endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 11:14:41.751 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 11:14:41.755 +03:00 [INF] Executing action method AuthController.Login (clean architecture) - Validation state: "Valid"
+2025-02-13 11:14:41.794 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 11:14:42.057 +03:00 [INF] Executed action method AuthController.Login (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 301.7898ms.
+2025-02-13 11:14:42.057 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Entity.AuthResponse'.
+2025-02-13 11:14:42.059 +03:00 [INF] Executed action AuthController.Login (clean architecture) in 307.0397ms
+2025-02-13 11:14:42.059 +03:00 [INF] Executed endpoint 'AuthController.Login (clean architecture)'
+2025-02-13 11:14:42.059 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/login - 200 null application/json; charset=utf-8 323.219ms
+2025-02-13 11:15:04.176 +03:00 [INF] Application is shutting down...
+2025-02-13 11:15:16.178 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:15:16.236 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:15:16.249 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:15:16.250 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:15:16.250 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:15:16.251 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:15:16.674 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:15:16.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 101.6725ms
+2025-02-13 11:15:16.873 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:15:17.071 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 199.1692ms
+2025-02-13 11:15:27.047 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 11:15:27.063 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 11:15:27.106 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 11:15:27.109 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 11:15:27.110 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 401 0 null 63.0963ms
+2025-02-13 11:15:55.406 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 11:15:55.414 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 11:15:55.451 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 11:15:55.479 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 11:15:56.421 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 11:15:56.519 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-13 11:15:56.538 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1053.9287ms.
+2025-02-13 11:15:56.549 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 11:15:56.554 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1098.9764ms
+2025-02-13 11:15:56.555 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 11:15:56.569 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 500 null text/plain; charset=utf-8 1163.7198ms
+2025-02-13 11:16:00.064 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 11:16:00.066 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 11:16:00.067 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 11:16:00.069 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 11:16:00.111 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 11:16:00.113 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-13 11:16:00.115 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 45.2818ms.
+2025-02-13 11:16:00.116 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 11:16:00.116 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 48.8267ms
+2025-02-13 11:16:00.116 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 11:16:00.117 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 500 null text/plain; charset=utf-8 52.9445ms
+2025-02-13 11:16:02.606 +03:00 [INF] Application is shutting down...
+2025-02-13 11:55:31.530 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:55:31.593 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:55:31.610 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:55:31.611 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:55:31.612 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:55:31.612 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:55:32.689 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:55:32.822 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 135.0192ms
+2025-02-13 11:55:32.939 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:55:33.050 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 112.4979ms
+2025-02-13 11:56:50.518 +03:00 [INF] Application is shutting down...
+2025-02-13 11:56:53.396 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:56:53.472 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:56:53.487 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:56:53.489 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:56:53.489 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:56:53.489 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:56:53.763 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:56:53.873 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 112.0093ms
+2025-02-13 11:56:53.975 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:56:54.106 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.2135ms
+2025-02-13 11:57:40.865 +03:00 [INF] Application is shutting down...
+2025-02-13 11:57:41.998 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 11:57:42.069 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 11:57:42.088 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 11:57:42.090 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 11:57:42.090 +03:00 [INF] Hosting environment: Development
+2025-02-13 11:57:42.091 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 11:57:42.566 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 11:57:42.678 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 113.306ms
+2025-02-13 11:57:42.776 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 11:57:42.899 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 123.5432ms
+2025-02-13 12:00:10.876 +03:00 [INF] Application is shutting down...
+2025-02-13 12:00:13.476 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:00:13.537 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:00:13.551 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:00:13.553 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:00:13.553 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:00:13.553 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 12:00:14.023 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:00:14.170 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 146.9987ms
+2025-02-13 12:00:14.257 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:00:14.358 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.3895ms
+2025-02-13 12:02:07.351 +03:00 [INF] Application is shutting down...
+2025-02-13 12:02:09.820 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:02:09.877 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:02:09.891 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:02:09.892 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:02:09.893 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:02:09.893 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 12:02:10.469 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:02:10.561 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 92.7724ms
+2025-02-13 12:02:10.660 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:02:10.784 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 124.9124ms
+2025-02-13 12:02:50.281 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 12:02:50.292 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 12:02:50.337 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:02:50.355 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 12:02:50.373 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 12:02:51.398 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 12:02:51.491 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 12:02:51.509 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1131.4612ms.
+2025-02-13 12:02:51.519 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 12:02:51.524 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1165.6535ms
+2025-02-13 12:02:51.525 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:02:51.539 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 500 null text/plain; charset=utf-8 1257.8643ms
+2025-02-13 12:03:50.348 +03:00 [INF] Application is shutting down...
+2025-02-13 12:03:52.879 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:03:52.938 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:03:52.952 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:03:52.954 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:03:52.954 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:03:52.954 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 12:03:53.572 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:03:53.677 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 105.5616ms
+2025-02-13 12:03:53.782 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:03:53.873 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 91.0216ms
+2025-02-13 12:04:04.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 12:04:04.183 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 12:04:04.226 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:04:04.247 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 12:04:04.263 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 12:04:05.274 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 12:04:05.362 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 12:04:05.382 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1114.0333ms.
+2025-02-13 12:04:05.393 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 12:04:05.398 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1147.2059ms
+2025-02-13 12:04:05.399 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:04:05.414 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 500 null text/plain; charset=utf-8 1247.0299ms
+2025-02-13 12:06:07.564 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-13 12:06:07.570 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:06:07.578 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 12:06:07.581 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 12:06:07.618 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 12:06:07.620 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-13 12:06:07.622 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 39.908ms.
+2025-02-13 12:06:07.622 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 12:06:07.623 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 44.0789ms
+2025-02-13 12:06:07.623 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:06:07.623 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 500 null text/plain; charset=utf-8 58.7472ms
+2025-02-13 12:07:14.777 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 12:07:14.791 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 12:07:14.795 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 12:07:14.795 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 401 0 null 18.3353ms
+2025-02-13 12:07:29.775 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 12:07:29.782 +03:00 [INF] Executing endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 12:07:29.791 +03:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(Int32, Int32, System.String) on controller ProductsController (clean architecture).
+2025-02-13 12:07:29.798 +03:00 [INF] Executing action method ProductsController.GetProducts (clean architecture) - Validation state: "Valid"
+2025-02-13 12:07:29.799 +03:00 [INF] Fetching products with Skip: 0, Take: 10
+2025-02-13 12:07:29.867 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Description", p."Name"
+FROM products AS p
+2025-02-13 12:07:29.870 +03:00 [INF] Successfully retrieved 3 products.
+2025-02-13 12:07:29.870 +03:00 [INF] Executed action method ProductsController.GetProducts (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 72.0258ms.
+2025-02-13 12:07:29.870 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Features.Product.Models.ProductDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-13 12:07:29.882 +03:00 [INF] Executed action ProductsController.GetProducts (clean architecture) in 90.1974ms
+2025-02-13 12:07:29.882 +03:00 [INF] Executed endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 12:07:29.882 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 200 null application/json; charset=utf-8 106.8276ms
+2025-02-13 12:10:34.939 +03:00 [INF] Application is shutting down...
+2025-02-13 12:10:37.494 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:10:37.552 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:10:37.565 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:10:37.567 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:10:37.567 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:10:37.567 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 12:10:38.145 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:10:38.252 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 107.2429ms
+2025-02-13 12:10:38.350 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:10:38.501 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 151.7559ms
+2025-02-13 12:10:55.159 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 12:10:55.180 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 12:10:55.228 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:10:55.246 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 12:10:55.264 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 12:10:56.250 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 12:10:56.338 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 12:10:56.356 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1087.9841ms.
+2025-02-13 12:10:56.367 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 12:10:56.372 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1122.3024ms
+2025-02-13 12:10:56.373 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:10:56.388 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 500 null text/plain; charset=utf-8 1229.1322ms
+2025-02-13 12:11:04.081 +03:00 [INF] Application is shutting down...
+2025-02-13 12:11:50.857 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-13 12:11:51.002 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-02-13 12:11:51.006 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-13 12:11:51.021 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-02-13 12:11:51.022 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-13 12:11:51.027 +03:00 [INF] Applying migration '20250213091137_updatenewchange'.
+2025-02-13 12:11:51.031 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250213091137_updatenewchange', '9.0.1');
+2025-02-13 12:12:03.634 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:12:03.699 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:12:03.713 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:12:03.715 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:12:03.715 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:12:03.715 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 12:12:04.352 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:12:04.509 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 157.1157ms
+2025-02-13 12:12:04.523 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 12:12:04.525 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 11.0687ms
+2025-02-13 12:12:04.629 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:12:04.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 200.0292ms
+2025-02-13 12:12:04.832 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 12:12:04.836 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 4.7137ms
+2025-02-13 12:12:54.353 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 12:12:54.369 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 12:12:54.414 +03:00 [INF] Executing endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 12:12:54.434 +03:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(Int32, Int32, System.String) on controller ProductsController (clean architecture).
+2025-02-13 12:12:54.455 +03:00 [INF] Executing action method ProductsController.GetProducts (clean architecture) - Validation state: "Valid"
+2025-02-13 12:12:54.457 +03:00 [INF] Fetching products with Skip: 0, Take: 10
+2025-02-13 12:12:55.415 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Description", p."Name"
+FROM products AS p
+2025-02-13 12:12:55.463 +03:00 [INF] Successfully retrieved 3 products.
+2025-02-13 12:12:55.466 +03:00 [INF] Executed action method ProductsController.GetProducts (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1007.66ms.
+2025-02-13 12:12:55.470 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Features.Product.Models.ProductDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-13 12:12:55.483 +03:00 [INF] Executed action ProductsController.GetProducts (clean architecture) in 1046.5351ms
+2025-02-13 12:12:55.483 +03:00 [INF] Executed endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 12:12:55.487 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 200 null application/json; charset=utf-8 1134.5218ms
+2025-02-13 12:13:36.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-13 12:13:36.287 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:13:36.299 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 12:13:36.304 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 12:13:36.465 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 12:13:36.510 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method62(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 12:13:36.525 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 221.0295ms.
+2025-02-13 12:13:36.527 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 12:13:36.528 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 229.424ms
+2025-02-13 12:13:36.529 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 12:13:36.533 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 500 null text/plain; charset=utf-8 258.1178ms
+2025-02-13 12:14:01.465 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 68
+2025-02-13 12:14:01.470 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 12:14:01.475 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-13 12:14:01.516 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-13 12:14:01.569 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-13 12:14:01.884 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2);
+2025-02-13 12:14:01.891 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 374.782ms.
+2025-02-13 12:14:01.891 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-13 12:14:01.892 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 417.604ms
+2025-02-13 12:14:01.892 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-13 12:14:01.893 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 427.8428ms
+2025-02-13 12:14:32.858 +03:00 [INF] Application is shutting down...
+2025-02-13 12:14:36.963 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 12:14:37.039 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 12:14:37.071 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 12:14:37.073 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 12:14:37.073 +03:00 [INF] Hosting environment: Development
+2025-02-13 12:14:37.073 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 13:37:32.426 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 13:37:32.493 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 13:37:32.509 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 13:37:32.511 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 13:37:32.512 +03:00 [INF] Hosting environment: Development
+2025-02-13 13:37:32.512 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 13:37:33.368 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 13:37:33.549 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 189.6589ms
+2025-02-13 13:37:33.656 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 13:37:33.750 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 94.3817ms
+2025-02-13 13:38:10.646 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-13 13:38:10.663 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 13:38:10.697 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:38:10.714 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 13:38:10.733 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 13:38:11.702 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 13:38:11.795 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 13:38:11.814 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1076.6852ms.
+2025-02-13 13:38:11.825 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 13:38:11.830 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1111.7289ms
+2025-02-13 13:38:11.831 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:38:11.846 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 1200.2502ms
+2025-02-13 13:39:39.963 +03:00 [INF] Application is shutting down...
+2025-02-13 13:39:43.651 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 13:39:43.712 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 13:39:43.725 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 13:39:43.726 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 13:39:43.727 +03:00 [INF] Hosting environment: Development
+2025-02-13 13:39:43.727 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 13:39:44.366 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 13:39:44.469 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 104.283ms
+2025-02-13 13:39:44.569 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 13:39:44.706 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.608ms
+2025-02-13 13:39:46.038 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-13 13:39:46.056 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 13:39:46.093 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:39:46.118 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 13:39:46.142 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 13:39:47.091 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 13:39:47.215 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Application/Features/UserInfo/GetUserInfoQuery/Query/UserInfoHandler.cs:line 17
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id) in /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/Presentation/Controller/UserController.cs:line 30
+2025-02-13 13:39:47.231 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1085.1403ms.
+2025-02-13 13:39:47.242 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 13:39:47.247 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 1125.8036ms
+2025-02-13 13:39:47.248 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:39:47.264 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 1225.7954ms
+2025-02-13 13:41:24.104 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-13 13:41:24.115 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:41:24.120 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-13 13:41:24.125 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUser (clean architecture) - Validation state: "Valid"
+2025-02-13 13:41:24.155 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-13 13:41:24.158 +03:00 [ERR] An error occurred while fetching user.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserEntity -> UserInfoDto
+UserEntity -> clean_architecture.Application.Features.UserInfo.Model.UserInfoDto
+   at lambda_method42(Closure, Object, UserInfoDto, ResolutionContext)
+   at clean_architecture.Application.Features.UserInfo.Query.UserInfoHandler.Handle(UserInfoQuery request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at clean_architecture.Controllers.UserController.GetUser(Guid id)
+2025-02-13 13:41:24.160 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUser (clean architecture), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 33.9158ms.
+2025-02-13 13:41:24.161 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-13 13:41:24.162 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUser (clean architecture) in 41.2209ms
+2025-02-13 13:41:24.162 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUser (clean architecture)'
+2025-02-13 13:41:24.162 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/users/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 500 null text/plain; charset=utf-8 58.7486ms
+2025-02-13 13:46:29.710 +03:00 [INF] Application is shutting down...
+2025-02-13 14:18:36.745 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 14:18:36.851 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 14:18:36.870 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 14:18:36.872 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 14:18:36.872 +03:00 [INF] Hosting environment: Development
+2025-02-13 14:18:36.873 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 14:18:37.215 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 14:18:37.323 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 108.8025ms
+2025-02-13 14:18:37.439 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 14:18:37.554 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.5857ms
+2025-02-13 14:18:39.150 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 14:18:39.152 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 2.2388ms
+2025-02-13 14:18:39.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 14:18:39.270 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 3.5844ms
+2025-02-13 14:18:44.065 +03:00 [INF] Application is shutting down...
+2025-02-13 14:24:02.009 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 14:24:02.079 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 14:24:02.095 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 14:24:02.096 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 14:24:02.096 +03:00 [INF] Hosting environment: Development
+2025-02-13 14:24:02.097 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 14:24:02.574 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 14:24:02.679 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 106.6764ms
+2025-02-13 14:24:02.796 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 14:24:02.910 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 114.6473ms
+2025-02-13 14:24:08.210 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - null null
+2025-02-13 14:24:08.221 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 14:24:08.275 +03:00 [INF] Executing endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 14:24:08.296 +03:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(Int32, Int32, System.String) on controller ProductsController (clean architecture).
+2025-02-13 14:24:08.316 +03:00 [INF] Executing action method ProductsController.GetProducts (clean architecture) - Validation state: "Valid"
+2025-02-13 14:24:08.318 +03:00 [INF] Fetching products with Skip: 0, Take: 10
+2025-02-13 14:24:09.223 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Description", p."Name"
+FROM products AS p
+2025-02-13 14:24:09.273 +03:00 [INF] Successfully retrieved 3 products.
+2025-02-13 14:24:09.275 +03:00 [INF] Executed action method ProductsController.GetProducts (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 955.623ms.
+2025-02-13 14:24:09.279 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Features.Product.Models.ProductDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-13 14:24:09.292 +03:00 [INF] Executed action ProductsController.GetProducts (clean architecture) in 994.3848ms
+2025-02-13 14:24:09.292 +03:00 [INF] Executed endpoint 'ProductsController.GetProducts (clean architecture)'
+2025-02-13 14:24:09.296 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/products?skip=0&take=10 - 200 null application/json; charset=utf-8 1085.9562ms
+2025-02-13 14:25:19.814 +03:00 [INF] Application is shutting down...
+2025-02-13 14:27:08.608 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 14:27:08.667 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 14:27:08.682 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 14:27:08.683 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 14:27:08.684 +03:00 [INF] Hosting environment: Development
+2025-02-13 14:27:08.684 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 14:27:09.242 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 14:27:09.362 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 120.0625ms
+2025-02-13 14:27:09.833 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 14:27:09.911 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.0557ms
+2025-02-13 14:27:31.100 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-13 14:27:31.109 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 14:27:31.156 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-13 14:27:31.160 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-02-13 14:27:31.160 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 401 0 null 60.4935ms
+2025-02-13 14:27:57.497 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-13 14:27:57.502 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 404 0 null 5.2477ms
+2025-02-13 14:27:57.508 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5070/api/v1/categories, Response status code: 404
+2025-02-13 14:28:02.456 +03:00 [INF] Application is shutting down...
+2025-02-13 14:28:04.992 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-13 14:28:05.050 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-13 14:28:05.064 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-13 14:28:05.065 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-13 14:28:05.065 +03:00 [INF] Hosting environment: Development
+2025-02-13 14:28:05.066 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-13 14:28:05.248 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-13 14:28:05.356 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 109.1687ms
+2025-02-13 14:28:05.457 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-13 14:28:05.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 140.391ms
+2025-02-13 14:28:10.282 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/categories - null null
+2025-02-13 14:28:10.297 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-13 14:28:10.320 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-13 14:28:10.343 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller clean_architecture.Controllers.CategoryController (clean architecture).
+2025-02-13 14:28:10.352 +03:00 [INF] Executing action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) - Validation state: "Valid"
+2025-02-13 14:28:11.219 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c."Name"
+FROM categories AS c
+2025-02-13 14:28:11.295 +03:00 [INF] Successfully retrieved 2 categories.
+2025-02-13 14:28:11.300 +03:00 [INF] Executed action method clean_architecture.Controllers.CategoryController.GetCategories (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 943.4242ms.
+2025-02-13 14:28:11.309 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[clean_architecture.Application.Features.Category.Model.CategoryDto, clean architecture, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-13 14:28:11.332 +03:00 [INF] Executed action clean_architecture.Controllers.CategoryController.GetCategories (clean architecture) in 985.5219ms
+2025-02-13 14:28:11.333 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.CategoryController.GetCategories (clean architecture)'
+2025-02-13 14:28:11.346 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/categories - 200 null application/json; charset=utf-8 1064.2912ms
+2025-02-13 14:30:46.653 +03:00 [INF] Application is shutting down...

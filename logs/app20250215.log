@@ -1,0 +1,97 @@
+2025-02-15 00:00:33.759 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-15 00:00:33.819 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-15 00:00:33.832 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-15 00:00:33.833 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-15 00:00:33.834 +03:00 [INF] Hosting environment: Development
+2025-02-15 00:00:33.834 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-15 00:00:34.391 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-15 00:00:34.529 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 139.7038ms
+2025-02-15 00:00:34.635 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-15 00:00:34.809 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 175.5307ms
+2025-02-15 00:00:52.018 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063d-14b7-7685-a2d6-79a4ee55a1c0 - null null
+2025-02-15 00:00:52.030 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-15 00:00:52.073 +03:00 [INF] Executing endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:00:52.093 +03:00 [INF] Route matched with {action = "Delete", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller AuthController (clean architecture).
+2025-02-15 00:00:52.111 +03:00 [INF] Executing action method AuthController.Delete (clean architecture) - Validation state: "Valid"
+2025-02-15 00:00:53.024 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_Id_0
+LIMIT 1
+2025-02-15 00:00:53.130 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM users
+WHERE user_id = @p0;
+2025-02-15 00:00:53.138 +03:00 [INF] Executed action method AuthController.Delete (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1023.7655ms.
+2025-02-15 00:00:53.142 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-15 00:00:53.148 +03:00 [INF] Executed action AuthController.Delete (clean architecture) in 1052.9831ms
+2025-02-15 00:00:53.148 +03:00 [INF] Executed endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:00:53.152 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063d-14b7-7685-a2d6-79a4ee55a1c0 - 200 null application/json; charset=utf-8 1134.4349ms
+2025-02-15 00:01:03.480 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063b-a9a0-7994-8df0-57d1a691b414 - null null
+2025-02-15 00:01:03.493 +03:00 [INF] Executing endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:03.494 +03:00 [INF] Route matched with {action = "Delete", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller AuthController (clean architecture).
+2025-02-15 00:01:03.496 +03:00 [INF] Executing action method AuthController.Delete (clean architecture) - Validation state: "Valid"
+2025-02-15 00:01:03.530 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_Id_0
+LIMIT 1
+2025-02-15 00:01:03.533 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM users
+WHERE user_id = @p0;
+2025-02-15 00:01:03.534 +03:00 [INF] Executed action method AuthController.Delete (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 37.2149ms.
+2025-02-15 00:01:03.534 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-15 00:01:03.535 +03:00 [INF] Executed action AuthController.Delete (clean architecture) in 41.0729ms
+2025-02-15 00:01:03.535 +03:00 [INF] Executed endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:03.535 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063b-a9a0-7994-8df0-57d1a691b414 - 200 null application/json; charset=utf-8 56.05ms
+2025-02-15 00:01:15.392 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063a-1166-7546-9998-4a4b2e1248e7 - null null
+2025-02-15 00:01:15.403 +03:00 [INF] Executing endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:15.403 +03:00 [INF] Route matched with {action = "Delete", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller AuthController (clean architecture).
+2025-02-15 00:01:15.405 +03:00 [INF] Executing action method AuthController.Delete (clean architecture) - Validation state: "Valid"
+2025-02-15 00:01:15.464 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_Id_0
+LIMIT 1
+2025-02-15 00:01:15.466 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM users
+WHERE user_id = @p0;
+2025-02-15 00:01:15.466 +03:00 [INF] Executed action method AuthController.Delete (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 60.9204ms.
+2025-02-15 00:01:15.467 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-15 00:01:15.467 +03:00 [INF] Executed action AuthController.Delete (clean architecture) in 63.5487ms
+2025-02-15 00:01:15.467 +03:00 [INF] Executed endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:15.468 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5070/api/auth/0195063a-1166-7546-9998-4a4b2e1248e7 - 200 null application/json; charset=utf-8 75.3835ms
+2025-02-15 00:01:21.482 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5070/api/auth/0194fe5f-3986-7c01-b0c6-5c8983787db3 - null null
+2025-02-15 00:01:21.483 +03:00 [INF] Executing endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:21.483 +03:00 [INF] Route matched with {action = "Delete", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller AuthController (clean architecture).
+2025-02-15 00:01:21.484 +03:00 [INF] Executing action method AuthController.Delete (clean architecture) - Validation state: "Valid"
+2025-02-15 00:01:21.487 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_Id_0
+LIMIT 1
+2025-02-15 00:01:21.489 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM users
+WHERE user_id = @p0;
+2025-02-15 00:01:21.490 +03:00 [INF] Executed action method AuthController.Delete (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.1587ms.
+2025-02-15 00:01:21.490 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-15 00:01:21.490 +03:00 [INF] Executed action AuthController.Delete (clean architecture) in 6.7799ms
+2025-02-15 00:01:21.490 +03:00 [INF] Executed endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:21.490 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5070/api/auth/0194fe5f-3986-7c01-b0c6-5c8983787db3 - 200 null application/json; charset=utf-8 7.9939ms
+2025-02-15 00:01:26.425 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5070/api/auth/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - null null
+2025-02-15 00:01:26.425 +03:00 [INF] Executing endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:26.425 +03:00 [INF] Route matched with {action = "Delete", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller AuthController (clean architecture).
+2025-02-15 00:01:26.426 +03:00 [INF] Executing action method AuthController.Delete (clean architecture) - Validation state: "Valid"
+2025-02-15 00:01:26.429 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_Id_0
+LIMIT 1
+2025-02-15 00:01:26.432 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM users
+WHERE user_id = @p0;
+2025-02-15 00:01:26.433 +03:00 [INF] Executed action method AuthController.Delete (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.4215ms.
+2025-02-15 00:01:26.433 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-15 00:01:26.434 +03:00 [INF] Executed action AuthController.Delete (clean architecture) in 8.1717ms
+2025-02-15 00:01:26.434 +03:00 [INF] Executed endpoint 'AuthController.Delete (clean architecture)'
+2025-02-15 00:01:26.434 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5070/api/auth/0bcc33f0-0d25-4f6d-87c6-1ba8e6f284e7 - 200 null application/json; charset=utf-8 9.711ms
+2025-02-15 00:01:30.506 +03:00 [INF] Application is shutting down...
