@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace clean_architecture.Controllers;
 
-[Authorize]
 [ApiController]
 [Route("api/v1/categories")]
 public class CategoryController : ControllerBase

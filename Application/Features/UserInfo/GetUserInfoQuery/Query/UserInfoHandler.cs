@@ -20,7 +20,6 @@ public class UserInfoHandler : BaseHandler , IRequestHandler<UserInfoQuery , Use
         {
             return null;
         }
-
         return userDto;
 
     }

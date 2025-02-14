@@ -26,7 +26,6 @@ public class UserController : ControllerBase
     {
         try
         {
-          
             var user = await _mediator.Send(new UserInfoQuery {UserId = id});
  
             if (user == null )
