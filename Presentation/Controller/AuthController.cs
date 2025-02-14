@@ -21,7 +21,8 @@ public class AuthController : ControllerBase
         var result = await _mediator.Send(new RegisterUserCommand
         {
             Username = request.Username,
-            Password = request.Password
+            Password = request.Password,
+            Location = request.Location
         });
 
         if (result == null)

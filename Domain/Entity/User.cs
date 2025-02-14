@@ -10,6 +10,8 @@ public class UserEntity
     public string Username { get; set; }
     public string PasswordHash { get; set; }
     
+    public string Loaction { get; set; }
+    
     
     
     

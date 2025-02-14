@@ -34,7 +34,8 @@ public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCom
         var newUser = new UserEntity
         {
             Username = request.Username,
-            PasswordHash = hashedPassword
+            PasswordHash = hashedPassword,
+            Loaction = request.Location
         };
 
         _dbContext.users.Add(newUser);
