@@ -12,16 +12,14 @@ public class GetUserInfoHandler : BaseHandler ,  IRequestHandler<GetUserInfoQuer
     public GetUserInfoHandler(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
     public async Task<UserDto> Handle(GetUserInfoQuery request, CancellationToken cancellationToken)
     {
-       var userInfo = await _dbContext.users.FirstOrDefaultAsync(x => x.Id == request.UserId);
+       var userInfo = await _dbContext.users.FindAsync(request.UserId);
        
          if(userInfo == null)
          {
              return null;
          }
-         
-      var   user = _mapper.Map<UserDto>(userInfo);
-         
-
+         var  user = _mapper.Map<UserDto>(userInfo);
+      
          return user;
     }
 }

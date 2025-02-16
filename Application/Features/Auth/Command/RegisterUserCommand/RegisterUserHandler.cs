@@ -35,7 +35,7 @@ public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCom
         {
             Username = request.Username,
             PasswordHash = hashedPassword,
-            Loaction = request.Location
+            Location = request.Location
         };
 
         _dbContext.users.Add(newUser);
@@ -45,7 +45,8 @@ public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCom
         {
             StatusCode = 200,
             Message = "User registered successfully.",
-            Username = newUser.Username
+            Username = newUser.Username,
+            Location = newUser.Location
         };
     }
 }
