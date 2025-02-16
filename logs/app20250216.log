@@ -1,0 +1,179 @@
+2025-02-16 10:05:06.277 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-16 10:05:06.344 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-16 10:05:06.364 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-16 10:05:06.365 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-16 10:05:06.366 +03:00 [INF] Hosting environment: Development
+2025-02-16 10:05:06.366 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-16 10:05:09.443 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-16 10:05:09.571 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 128.4215ms
+2025-02-16 10:05:09.745 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-16 10:05:09.856 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.9549ms
+2025-02-16 10:06:33.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-16 10:06:33.878 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-16 10:06:33.914 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:06:33.931 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:06:33.950 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:06:34.988 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-16 10:06:35.068 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1113.9082ms.
+2025-02-16 10:06:35.077 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:06:35.097 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 1162.7026ms
+2025-02-16 10:06:35.098 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:06:35.110 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 1253.1224ms
+2025-02-16 10:07:23.581 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 74
+2025-02-16 10:07:23.588 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:07:23.596 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-16 10:07:23.634 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-16 10:07:23.664 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-16 10:07:23.955 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "Loaction", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3);
+2025-02-16 10:07:23.962 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 327.675ms.
+2025-02-16 10:07:23.962 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-16 10:07:23.964 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 366.8061ms
+2025-02-16 10:07:23.964 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:07:23.964 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 382.5447ms
+2025-02-16 10:11:22.446 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 68
+2025-02-16 10:11:22.455 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:11:22.456 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-16 10:11:22.462 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-16 10:11:22.527 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-16 10:11:22.674 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (user_id, "Loaction", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3);
+2025-02-16 10:11:22.674 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 211.5343ms.
+2025-02-16 10:11:22.674 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-16 10:11:22.675 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 218.3331ms
+2025-02-16 10:11:22.675 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:11:22.675 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 228.9329ms
+2025-02-16 10:11:44.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-16 10:11:44.743 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:11:44.743 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:11:44.744 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:11:44.763 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__request_UserId_0
+LIMIT 1
+2025-02-16 10:11:44.767 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.938ms.
+2025-02-16 10:11:44.767 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:11:44.768 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 25.0343ms
+2025-02-16 10:11:44.768 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:11:44.768 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 28.1463ms
+2025-02-16 10:15:06.043 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5070/api/auth/register - application/json 68
+2025-02-16 10:15:06.044 +03:00 [INF] Executing endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:15:06.056 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(clean_architecture.Entity.AuthRequest) on controller AuthController (clean architecture).
+2025-02-16 10:15:06.060 +03:00 [INF] Executing action method AuthController.Register (clean architecture) - Validation state: "Valid"
+2025-02-16 10:15:06.069 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u."Username" = @__request_Username_0
+LIMIT 1
+2025-02-16 10:15:06.070 +03:00 [INF] Executed action method AuthController.Register (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.2238ms.
+2025-02-16 10:15:06.070 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.Auth.Model.RegisterUserResponse'.
+2025-02-16 10:15:06.072 +03:00 [INF] Executed action AuthController.Register (clean architecture) in 15.2464ms
+2025-02-16 10:15:06.072 +03:00 [INF] Executed endpoint 'AuthController.Register (clean architecture)'
+2025-02-16 10:15:06.072 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5070/api/auth/register - 200 null application/json; charset=utf-8 29.0782ms
+2025-02-16 10:20:45.347 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-16 10:20:45.349 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:20:45.360 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:20:45.361 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:20:45.438 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-16 10:20:45.439 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 77.2533ms.
+2025-02-16 10:20:45.439 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:20:45.440 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 79.9715ms
+2025-02-16 10:20:45.441 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:20:45.441 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 93.5023ms
+2025-02-16 10:21:03.088 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-16 10:21:03.094 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:21:03.094 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:21:03.097 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:21:03.109 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Loaction", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-16 10:21:03.110 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.5119ms.
+2025-02-16 10:21:03.110 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:21:03.111 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 16.0419ms
+2025-02-16 10:21:03.111 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:21:03.111 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 22.9656ms
+2025-02-16 10:24:30.146 +03:00 [INF] Application is shutting down...
+eters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-16 10:24:25.127 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-02-16 10:24:25.132 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-16 10:24:25.133 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-02-16 10:24:25.134 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-02-16 10:24:25.140 +03:00 [INF] Applying migration '20250216072415_updateLocationName'.
+2025-02-16 10:24:25.144 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE users RENAME COLUMN "Loaction" TO "Location";
+2025-02-16 10:24:25.145 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250216072415_updateLocationName', '9.0.1');
+2025-02-16 10:24:36.208 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-16 10:24:36.275 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-16 10:24:36.289 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-16 10:24:36.291 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-16 10:24:36.291 +03:00 [INF] Hosting environment: Development
+2025-02-16 10:24:36.291 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-16 10:24:36.697 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-16 10:24:36.806 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 109.5611ms
+2025-02-16 10:24:36.951 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-16 10:24:37.056 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 105.5344ms
+2025-02-16 10:25:15.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-16 10:25:15.696 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-16 10:25:15.753 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:25:15.773 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:25:15.813 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:25:16.802 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-16 10:25:16.885 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1067.3342ms.
+2025-02-16 10:25:16.895 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:25:16.917 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 1140.9915ms
+2025-02-16 10:25:16.918 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:25:16.931 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 1248.5368ms
+2025-02-16 10:25:29.107 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-16 10:25:29.111 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:25:29.112 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-16 10:25:29.115 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-16 10:25:29.157 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-16 10:25:29.160 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 44.6641ms.
+2025-02-16 10:25:29.161 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-16 10:25:29.161 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 48.9187ms
+2025-02-16 10:25:29.161 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-16 10:25:29.162 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 54.7102ms
+2025-02-16 10:26:50.120 +03:00 [INF] Application is shutting down...
