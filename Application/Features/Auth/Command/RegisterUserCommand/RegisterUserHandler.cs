@@ -27,6 +27,7 @@ public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCom
                 Message = "User already exists."
             };
         }
+        
 
         // Hash the password before storing it
         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
