@@ -18,6 +18,7 @@ public class GetUserInfoHandler : BaseHandler ,  IRequestHandler<GetUserInfoQuer
          {
              return null;
          }
+         
          var  user = _mapper.Map<UserDto>(userInfo);
       
          return user;
