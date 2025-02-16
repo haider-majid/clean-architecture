@@ -31,6 +31,7 @@ public class RegisterUserHandler : BaseHandler , IRequestHandler<RegisterUserCom
 
         // Hash the password before storing it
         
+        
         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
         var newUser = new UserEntity
