@@ -1,0 +1,152 @@
+2025-02-17 09:12:27.111 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 09:12:27.172 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 09:12:27.188 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 09:12:27.189 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 09:12:27.190 +03:00 [INF] Hosting environment: Development
+2025-02-17 09:12:27.190 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 09:12:27.550 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 09:12:27.658 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 108.4376ms
+2025-02-17 09:12:27.773 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 09:12:27.878 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 105.372ms
+2025-02-17 09:14:58.164 +03:00 [INF] Application is shutting down...
+2025-02-17 09:15:01.781 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 09:15:01.841 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 09:15:01.858 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 09:15:01.859 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 09:15:01.860 +03:00 [INF] Hosting environment: Development
+2025-02-17 09:15:01.860 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 09:15:02.238 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 09:15:02.368 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 130.3062ms
+2025-02-17 09:15:02.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 09:15:02.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 119.9365ms
+2025-02-17 09:15:25.585 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-17 09:15:25.608 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-17 09:15:25.657 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 09:15:25.676 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-17 09:15:25.697 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-17 09:15:26.728 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-17 09:15:26.852 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1150.7698ms.
+2025-02-17 09:15:26.864 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-17 09:15:26.887 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 1206.8119ms
+2025-02-17 09:15:26.888 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 09:15:26.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 1324.1627ms
+2025-02-17 10:52:44.594 +03:00 [INF] Application is shutting down...
+2025-02-17 11:01:52.258 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 11:01:52.328 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 11:01:52.344 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 11:01:52.347 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 11:01:52.348 +03:00 [INF] Hosting environment: Development
+2025-02-17 11:01:52.348 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 11:01:52.898 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 11:01:53.137 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 242.2151ms
+2025-02-17 11:01:53.793 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 11:01:53.982 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "DELETE api/v1/user/{id}" for actions - clean_architecture.Controllers.UserController.Delete (clean architecture),clean_architecture.Controllers.UserController.Update (clean architecture). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-17 11:01:54.001 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 209.9802ms
+2025-02-17 11:02:07.536 +03:00 [INF] Application is shutting down...
+2025-02-17 11:02:09.887 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 11:02:09.950 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 11:02:09.964 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 11:02:09.966 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 11:02:09.966 +03:00 [INF] Hosting environment: Development
+2025-02-17 11:02:09.966 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 11:02:10.281 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 11:02:10.393 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 111.5637ms
+2025-02-17 11:02:10.490 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 11:02:10.593 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.8148ms
+2025-02-17 11:03:14.156 +03:00 [INF] Application is shutting down...
+2025-02-17 11:03:16.705 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 11:03:16.774 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 11:03:16.793 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 11:03:16.795 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 11:03:16.795 +03:00 [INF] Hosting environment: Development
+2025-02-17 11:03:16.795 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 11:03:16.907 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 11:03:17.006 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 99.5836ms
+2025-02-17 11:03:17.107 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 11:03:17.241 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 134.8611ms
+2025-02-17 11:03:35.978 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - application/json 50
+2025-02-17 11:03:35.988 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-17 11:03:36.036 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.Update (clean architecture)'
+2025-02-17 11:03:36.060 +03:00 [INF] Route matched with {action = "Update", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, clean_architecture.Application.Features.User.Command.UpdateUserCommand.UpdateUserCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-17 11:03:36.099 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.Update (clean architecture) - Validation state: "Valid"
+2025-02-17 11:03:37.050 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-17 11:03:37.192 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?', @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "Location" = @p0, "PasswordHash" = @p1, "Username" = @p2
+WHERE user_id = @p3;
+2025-02-17 11:03:37.205 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.Update (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1102.1527ms.
+2025-02-17 11:03:37.214 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-17 11:03:37.226 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.Update (clean architecture) in 1162.5227ms
+2025-02-17 11:03:37.227 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.Update (clean architecture)'
+2025-02-17 11:03:37.241 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 1263.6876ms
+2025-02-17 11:03:42.538 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - null null
+2025-02-17 11:03:42.542 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 11:03:42.545 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-17 11:03:42.547 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-17 11:03:42.570 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-17 11:03:42.576 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.0991ms.
+2025-02-17 11:03:42.576 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-17 11:03:42.581 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 36.0486ms
+2025-02-17 11:03:42.581 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 11:03:42.582 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/01950d98-f42f-7dbe-99c0-22ff120ccd3c - 200 null application/json; charset=utf-8 43.3533ms
+2025-02-17 11:04:09.276 +03:00 [INF] Application is shutting down...
+2025-02-17 11:04:11.464 +03:00 [INF] User profile is available. Using '/Users/hhhff/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-17 11:04:11.521 +03:00 [WRN] The WebRootPath was not found: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture/wwwroot. Static files may be unavailable.
+2025-02-17 11:04:11.534 +03:00 [INF] Now listening on: http://localhost:5070
+2025-02-17 11:04:11.536 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-17 11:04:11.536 +03:00 [INF] Hosting environment: Development
+2025-02-17 11:04:11.536 +03:00 [INF] Content root path: /Users/hhhff/Desktop/asp projects/clean_architecture/clean architecture
+2025-02-17 11:04:11.849 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/index.html - null null
+2025-02-17 11:04:11.947 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/index.html - 200 null text/html;charset=utf-8 99.0589ms
+2025-02-17 11:04:12.058 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - null null
+2025-02-17 11:04:12.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.7487ms
+2025-02-17 11:04:56.886 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - application/json 64
+2025-02-17 11:04:56.904 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-17 11:04:56.954 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.Update (clean architecture)'
+2025-02-17 11:04:56.975 +03:00 [INF] Route matched with {action = "Update", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, clean_architecture.Application.Features.User.Command.UpdateUserCommand.UpdateUserCommand) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-17 11:04:57.011 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.Update (clean architecture) - Validation state: "Valid"
+2025-02-17 11:04:57.973 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-17 11:04:58.109 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?', @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "Location" = @p0, "PasswordHash" = @p1, "Username" = @p2
+WHERE user_id = @p3;
+2025-02-17 11:04:58.122 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.Update (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1107.4082ms.
+2025-02-17 11:04:58.131 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-02-17 11:04:58.143 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.Update (clean architecture) in 1164.881ms
+2025-02-17 11:04:58.144 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.Update (clean architecture)'
+2025-02-17 11:04:58.157 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 1271.3826ms
+2025-02-17 11:05:04.801 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - null null
+2025-02-17 11:05:04.806 +03:00 [INF] Executing endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 11:05:04.811 +03:00 [INF] Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo(System.Guid) on controller clean_architecture.Controllers.UserController (clean architecture).
+2025-02-17 11:05:04.814 +03:00 [INF] Executing action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) - Validation state: "Valid"
+2025-02-17 11:05:04.867 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id, u."Location", u."PasswordHash", u."Username"
+FROM users AS u
+WHERE u.user_id = @__p_0
+LIMIT 1
+2025-02-17 11:05:04.877 +03:00 [INF] Executed action method clean_architecture.Controllers.UserController.GetUserInfo (clean architecture), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 61.9078ms.
+2025-02-17 11:05:04.877 +03:00 [INF] Executing OkObjectResult, writing value of type 'clean_architecture.Application.Features.User.Model.UserDto'.
+2025-02-17 11:05:04.887 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 75.887ms
+2025-02-17 11:05:04.887 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
+2025-02-17 11:05:04.888 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 86.8378ms

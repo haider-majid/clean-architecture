@@ -1,4 +1,5 @@
 using clean_architecture.Application.Features.Auth.Command.DeleteUserCommand;
+using clean_architecture.Application.Features.User.Command.UpdateUserCommand;
 using clean_architecture.Application.Features.User.Query.GetUserInfo;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -45,5 +46,24 @@ public class UserController: ControllerBase
 
         return Ok(response);
     }
+    
+    
+    
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update([FromRoute] Guid id , [FromBody] UpdateUserCommand command) 
+    {
+        var response = await _mediator.Send(new UpdateUserCommand
+        {
+            id = id,
+            Location = command.Location,
+            Username = command.Username
+        });
+
+        if (response == null)
+            return NotFound("User not found.");
+
+        return Ok(response);
+    }
+
 
 }
