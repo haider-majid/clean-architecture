@@ -48,17 +48,5 @@ public class AuthController : ControllerBase
         return Ok(response);
     }
     
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete([FromRoute] Guid id)
-    {
-        var response = await _mediator.Send(new DeleteUserCommand
-        {
-            Id = id
-        });
-
-        if (response == null)
-            return NotFound("User not found.");
-
-        return Ok(response);
-    }
+  
 }

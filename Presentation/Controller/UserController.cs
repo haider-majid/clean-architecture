@@ -1,3 +1,4 @@
+using clean_architecture.Application.Features.Auth.Command.DeleteUserCommand;
 using clean_architecture.Application.Features.User.Query.GetUserInfo;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,20 @@ public class UserController: ControllerBase
             return NotFound("User not found.");
 
         return Ok(result);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] Guid id)
+    {
+        var response = await _mediator.Send(new DeleteUserCommand
+        {
+            Id = id
+        });
+
+        if (response == null)
+            return NotFound("User not found.");
+
+        return Ok(response);
     }
 
 }
