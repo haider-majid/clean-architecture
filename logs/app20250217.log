@@ -150,3 +150,4 @@ LIMIT 1
 2025-02-17 11:05:04.887 +03:00 [INF] Executed action clean_architecture.Controllers.UserController.GetUserInfo (clean architecture) in 75.887ms
 2025-02-17 11:05:04.887 +03:00 [INF] Executed endpoint 'clean_architecture.Controllers.UserController.GetUserInfo (clean architecture)'
 2025-02-17 11:05:04.888 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5070/api/v1/user/0194fe96-2ae2-7dd9-b83c-2258dae755ce - 200 null application/json; charset=utf-8 86.8378ms
+2025-02-17 21:08:06.345 +03:00 [INF] Application is shutting down...

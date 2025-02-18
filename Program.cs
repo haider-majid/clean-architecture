@@ -25,7 +25,7 @@ builder.Services.AddMediatR(typeof(Program).Assembly);
 // configure logging
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.File("logs/app.log", rollingInterval: RollingInterval.Day)
+    .WriteTo.File("logs/app.log", rollingInterval: RollingInterval.Month)
     .CreateLogger();
 
 
