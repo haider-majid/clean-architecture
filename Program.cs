@@ -60,7 +60,7 @@ var secretKey = jwtSettings["Secret"];
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.RequireHttpsMetadata = false; 
+        options.RequireHttpsMetadata = false;
         options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters
         {
@@ -91,8 +91,8 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();  
-app.UseAuthorization(); 
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
